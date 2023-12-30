@@ -10,14 +10,31 @@ public class Throwable : MonoBehaviour
     [SerializeField]
     float multiplyer = 3.0f;
 
+
+    [SerializeField]
+    Material lineMaterial;
+    private LineRenderer lineRenderer;
+
     void Awake()
     {
         _rb = this.GetComponent<Rigidbody2D>();
+        lineRenderer = gameObject.GetComponent<LineRenderer>();
     }
+
+    private void Start()
+    {
+        lineRenderer.material = lineMaterial;
+        lineRenderer.startWidth = 0.1f;
+        lineRenderer.endWidth = 0.1f;
+        lineRenderer.positionCount = 2;
+        lineRenderer.enabled = false;
+    }
+
     //onmouse events possible thanks to monobehaviour + collider2d
     void OnMouseDown()
     {
         CalculateThrowVector();
+        lineRenderer.enabled = true;
     }
     void OnMouseDrag()
     {
@@ -29,14 +46,24 @@ public class Throwable : MonoBehaviour
         //doing vector2 math to ignore the z values in our distance.
         Vector2 distance = mousePos - this.transform.position;
         //dont normalize the ditance if you want the throw strength to vary
-        throwVector = -distance.normalized * 100;
+        throwVector = -distance ;
+        DrawThrowPath();
     }
     void OnMouseUp()
     {
         Throw();
+        lineRenderer.enabled=false;
     }
     public void Throw()
     {
         _rb.AddForce(throwVector * multiplyer);
+    }
+
+    void DrawThrowPath()
+    {
+        Vector3 startPos = transform.position;
+        Vector3 endPos = startPos + throwVector;
+        lineRenderer.SetPosition(0, startPos); 
+        lineRenderer.SetPosition(1, endPos);
     }
 }
