@@ -136,7 +136,7 @@ MonoBehaviour:
         m_CallState: 2
       - m_Target: {fileID: 7989848178881817450}
         m_TargetAssemblyTypeName: LifeManagement, Assembly-CSharp
-        m_MethodName: LifeLosed
+        m_MethodName: LifeLost
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -281,7 +281,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 41597256bdf694142bf5a018ef240e04, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  lifes: 10
+  startingLives: 10
 --- !u!1 &3846627195700541938
 GameObject:
   m_ObjectHideFlags: 0

@@ -15,7 +15,7 @@ public class KillObject : MonoBehaviour
         if(collision.gameObject.CompareTag("Player"))
         { 
             if(m_lifeManagement != null)
-                m_lifeManagement.LifeLosed();
+                m_lifeManagement.LifeLost();
             if (m_throwable != null)
                 m_throwable.ReturnOriginalPos();
         }

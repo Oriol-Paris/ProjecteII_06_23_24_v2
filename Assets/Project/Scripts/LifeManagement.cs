@@ -7,7 +7,10 @@ using UnityEngine.UI;
 public class LifeManagement : MonoBehaviour
 {
     [SerializeField]
-    private int lifes = 10; 
+    private int startingLives = 10;
+
+
+    private int lives = 10; 
 
     private TextMeshProUGUI m_TextMeshPro;
 
@@ -24,6 +27,8 @@ public class LifeManagement : MonoBehaviour
                 m_TextMeshPro = button.GetComponentInChildren<TextMeshProUGUI>();
             }
         }
+
+        lives = PlayerPrefs.GetInt("PlayerLives", startingLives);
     }
 
     private void Start()
@@ -31,21 +36,28 @@ public class LifeManagement : MonoBehaviour
         UpdateLifeText();
     }
 
-    public void LifeLosed()
+    public void LifeLost()
     {
-        lifes--;
+        lives--;
 
-        if (lifes < 0)
-            lifes = 0;
+        if (lives < 0)
+            lives = 0;
 
         UpdateLifeText(); 
+        SavePlayersLives();
     }
 
     private void UpdateLifeText()
     {
         if (m_TextMeshPro != null)
         {
-            m_TextMeshPro.text = lifes.ToString();
+            m_TextMeshPro.text = lives.ToString();
         }
+    }
+
+    private void SavePlayersLives()
+    {
+        PlayerPrefs.SetInt("PlayerLives", lives);
+        PlayerPrefs.Save();
     }
 }

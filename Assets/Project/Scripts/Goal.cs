@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using UnityEditor.Experimental.GraphView;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
@@ -7,6 +8,10 @@ public class Goal : MonoBehaviour
 {
     [SerializeField]
     public string NextLevelName;
+
+    
+
+    
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
@@ -18,6 +23,9 @@ public class Goal : MonoBehaviour
 
     private void LoadNextLevel()
     {
-        SceneManager.LoadScene(NextLevelName);
+        if (!LevelManager.Instance.random)
+            SceneManager.LoadScene(NextLevelName);
+        else
+            LevelManager.Instance.LoadRandomNextLevel();
     }
 }
