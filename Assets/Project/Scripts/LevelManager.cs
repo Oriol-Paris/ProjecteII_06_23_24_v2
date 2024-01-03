@@ -1,14 +1,19 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
 public class LevelManager : MonoBehaviour
 {
     [SerializeField]
-    public bool random = true;
+    public bool random;
 
-    private List<int> usedLevels = new List<int>();
+    private int counter;
+
+
+    HashSet<int> levels = new HashSet<int>();
+    private List<int> nextLevels = new List<int>();
 
     private static LevelManager instance;
 
@@ -31,6 +36,12 @@ public class LevelManager : MonoBehaviour
         }
     }
 
+    private void Awake()
+    {
+        random = false;
+        counter = 0;
+    }
+
     public void StartGame()
     {
         if (!random)
@@ -41,25 +52,38 @@ public class LevelManager : MonoBehaviour
 
     public void LoadRandomNextLevel()
     {
-        int highestSceneID = SceneManager.sceneCountInBuildSettings - 1;
-
-        if(usedLevels.Count == highestSceneID- 1)
-            usedLevels.Clear();
-
-        int nextSceneID;
-        do
-        {
-            nextSceneID = Random.Range(1, highestSceneID);
-        } while (usedLevels.Contains(nextSceneID));
-
-        usedLevels.Add(nextSceneID);
+        int nextSceneID = nextLevels[counter];
 
         SceneManager.LoadScene(nextSceneID);
+
+        counter++;
     }
 
     public void ChangeRandom()
     {
         random = !random;
+        int highestSceneID = SceneManager.sceneCountInBuildSettings - 1; ;
 
+        levels.Clear();
+        levels = new HashSet<int>(Enumerable.Range(1,highestSceneID));
+        nextLevels = levels.ToList();
+        nextLevels = nextLevels.OrderBy(x => Random.value).ToList();
+        
+        ShuffleLevels();
+
+    }
+
+    private void ShuffleLevels()
+    {
+        int n = nextLevels.Count;
+
+        while (n > 1)
+        {
+            n--;
+            int k = Random.Range(0, n + 1);
+            int value = nextLevels[k];
+            nextLevels[k] = nextLevels[n];
+            nextLevels[n] = value;
+        }
     }
 }
