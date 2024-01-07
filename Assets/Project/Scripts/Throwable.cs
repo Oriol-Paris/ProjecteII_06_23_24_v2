@@ -20,6 +20,12 @@ public class Throwable : MonoBehaviour
     Transform playerTransform;
     Vector2 originalPos;
 
+
+    [SerializeField]
+    AudioSource hitSource;
+    [SerializeField]
+    AudioSource bounceSource;
+
     void Awake()
     {
         _rb = this.GetComponent<Rigidbody2D>();
@@ -90,5 +96,18 @@ public class Throwable : MonoBehaviour
         _rb.velocity = Vector3.zero;
         _rb.angularVelocity = 0;
         _rb.Sleep();
+    }
+
+    private void OnCollisionEnter2D(Collision2D collision)
+    {
+        if(collision.gameObject.CompareTag("wall"))
+        {
+            bounceSource.Play();
+        }
+        else if(collision.gameObject.CompareTag("spike"))
+        {
+            hitSource.Play();
+        }
+
     }
 }
