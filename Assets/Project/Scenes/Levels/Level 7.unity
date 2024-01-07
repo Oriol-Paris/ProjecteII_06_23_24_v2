@@ -136,7 +136,7 @@ GameObject:
   - component: {fileID: 31364026}
   m_Layer: 0
   m_Name: Square (2)
-  m_TagString: Untagged
+  m_TagString: wall
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -316,7 +316,7 @@ PrefabInstance:
     - target: {fileID: 7455853298194667967, guid: 57fc0a2373cd7bb42a637c6b315eed68, type: 3}
       propertyPath: <m_lifeManagement>k__BackingField
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 1624057965}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -390,7 +390,7 @@ PrefabInstance:
     - target: {fileID: 7455853298194667967, guid: 57fc0a2373cd7bb42a637c6b315eed68, type: 3}
       propertyPath: <m_lifeManagement>k__BackingField
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 1624057965}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -414,7 +414,7 @@ GameObject:
   - component: {fileID: 322049882}
   m_Layer: 0
   m_Name: Square (9)
-  m_TagString: Untagged
+  m_TagString: wall
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -594,7 +594,7 @@ PrefabInstance:
     - target: {fileID: 7455853298194667967, guid: 57fc0a2373cd7bb42a637c6b315eed68, type: 3}
       propertyPath: <m_lifeManagement>k__BackingField
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 1624057965}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -618,7 +618,7 @@ GameObject:
   - component: {fileID: 497265373}
   m_Layer: 0
   m_Name: Square (7)
-  m_TagString: Untagged
+  m_TagString: wall
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -898,7 +898,7 @@ GameObject:
   - component: {fileID: 703642714}
   m_Layer: 0
   m_Name: Square (12)
-  m_TagString: Untagged
+  m_TagString: wall
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1078,7 +1078,7 @@ PrefabInstance:
     - target: {fileID: 7455853298194667967, guid: 57fc0a2373cd7bb42a637c6b315eed68, type: 3}
       propertyPath: <m_lifeManagement>k__BackingField
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 1624057965}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -1102,7 +1102,7 @@ GameObject:
   - component: {fileID: 805777919}
   m_Layer: 0
   m_Name: Square (10)
-  m_TagString: Untagged
+  m_TagString: wall
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1232,7 +1232,7 @@ GameObject:
   - component: {fileID: 841135193}
   m_Layer: 0
   m_Name: Square
-  m_TagString: Untagged
+  m_TagString: wall
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1362,7 +1362,7 @@ GameObject:
   - component: {fileID: 845295234}
   m_Layer: 0
   m_Name: Square (13)
-  m_TagString: Untagged
+  m_TagString: wall
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1492,7 +1492,7 @@ GameObject:
   - component: {fileID: 856826877}
   m_Layer: 0
   m_Name: Square (11)
-  m_TagString: Untagged
+  m_TagString: wall
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1672,7 +1672,7 @@ PrefabInstance:
     - target: {fileID: 7455853298194667967, guid: 57fc0a2373cd7bb42a637c6b315eed68, type: 3}
       propertyPath: <m_lifeManagement>k__BackingField
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 1624057965}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -1746,7 +1746,7 @@ PrefabInstance:
     - target: {fileID: 7455853298194667967, guid: 57fc0a2373cd7bb42a637c6b315eed68, type: 3}
       propertyPath: <m_lifeManagement>k__BackingField
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 1624057965}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -1960,7 +1960,7 @@ PrefabInstance:
     - target: {fileID: 7455853298194667967, guid: 57fc0a2373cd7bb42a637c6b315eed68, type: 3}
       propertyPath: <m_lifeManagement>k__BackingField
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 1624057965}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -2034,7 +2034,7 @@ PrefabInstance:
     - target: {fileID: 7455853298194667967, guid: 57fc0a2373cd7bb42a637c6b315eed68, type: 3}
       propertyPath: <m_lifeManagement>k__BackingField
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 1624057965}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -2103,7 +2103,7 @@ GameObject:
   - component: {fileID: 1066165011}
   m_Layer: 0
   m_Name: Square (8)
-  m_TagString: Untagged
+  m_TagString: wall
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -2283,7 +2283,7 @@ PrefabInstance:
     - target: {fileID: 7455853298194667967, guid: 57fc0a2373cd7bb42a637c6b315eed68, type: 3}
       propertyPath: <m_lifeManagement>k__BackingField
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 1624057965}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -2307,7 +2307,7 @@ GameObject:
   - component: {fileID: 1127941196}
   m_Layer: 0
   m_Name: Square (3)
-  m_TagString: Untagged
+  m_TagString: wall
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -2437,7 +2437,7 @@ GameObject:
   - component: {fileID: 1323028826}
   m_Layer: 0
   m_Name: Square (1)
-  m_TagString: Untagged
+  m_TagString: wall
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -2617,7 +2617,7 @@ PrefabInstance:
     - target: {fileID: 7455853298194667967, guid: 57fc0a2373cd7bb42a637c6b315eed68, type: 3}
       propertyPath: <m_lifeManagement>k__BackingField
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 1624057965}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -2728,6 +2728,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: UILevelCanvas
       objectReference: {fileID: 0}
+    - target: {fileID: 7726199924431923173, guid: b7900fb592070fa468bb85f93eda4d10, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 1840541192}
+    - target: {fileID: 7726199924431923173, guid: b7900fb592070fa468bb85f93eda4d10, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: ReturnOriginalPos
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -2796,7 +2804,7 @@ PrefabInstance:
     - target: {fileID: 7455853298194667967, guid: 57fc0a2373cd7bb42a637c6b315eed68, type: 3}
       propertyPath: <m_lifeManagement>k__BackingField
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 1624057965}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -2870,7 +2878,7 @@ PrefabInstance:
     - target: {fileID: 7455853298194667967, guid: 57fc0a2373cd7bb42a637c6b315eed68, type: 3}
       propertyPath: <m_lifeManagement>k__BackingField
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 1624057965}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -3017,7 +3025,7 @@ PrefabInstance:
     - target: {fileID: 7455853298194667967, guid: 57fc0a2373cd7bb42a637c6b315eed68, type: 3}
       propertyPath: <m_lifeManagement>k__BackingField
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 1624057965}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -3091,7 +3099,7 @@ PrefabInstance:
     - target: {fileID: 7455853298194667967, guid: 57fc0a2373cd7bb42a637c6b315eed68, type: 3}
       propertyPath: <m_lifeManagement>k__BackingField
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 1624057965}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -3165,7 +3173,7 @@ PrefabInstance:
     - target: {fileID: 7455853298194667967, guid: 57fc0a2373cd7bb42a637c6b315eed68, type: 3}
       propertyPath: <m_lifeManagement>k__BackingField
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 1624057965}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -3190,7 +3198,7 @@ GameObject:
   - component: {fileID: 1536130057}
   m_Layer: 0
   m_Name: Goal
-  m_TagString: Untagged
+  m_TagString: Finish
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -3373,7 +3381,7 @@ PrefabInstance:
     - target: {fileID: 7455853298194667967, guid: 57fc0a2373cd7bb42a637c6b315eed68, type: 3}
       propertyPath: <m_lifeManagement>k__BackingField
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 1624057965}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -3397,7 +3405,7 @@ GameObject:
   - component: {fileID: 1592573996}
   m_Layer: 0
   m_Name: Square (4)
-  m_TagString: Untagged
+  m_TagString: wall
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -3514,6 +3522,17 @@ Transform:
   m_Father: {fileID: 997346146}
   m_RootOrder: -1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1624057965 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 7989848178881817450, guid: b7900fb592070fa468bb85f93eda4d10, type: 3}
+  m_PrefabInstance: {fileID: 1353199279}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 41597256bdf694142bf5a018ef240e04, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1675642238
 GameObject:
   m_ObjectHideFlags: 0
@@ -3527,7 +3546,7 @@ GameObject:
   - component: {fileID: 1675642239}
   m_Layer: 0
   m_Name: Square (5)
-  m_TagString: Untagged
+  m_TagString: wall
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -3707,7 +3726,7 @@ PrefabInstance:
     - target: {fileID: 7455853298194667967, guid: 57fc0a2373cd7bb42a637c6b315eed68, type: 3}
       propertyPath: <m_lifeManagement>k__BackingField
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 1624057965}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -3781,7 +3800,7 @@ PrefabInstance:
     - target: {fileID: 7455853298194667967, guid: 57fc0a2373cd7bb42a637c6b315eed68, type: 3}
       propertyPath: <m_lifeManagement>k__BackingField
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 1624057965}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -3988,7 +4007,7 @@ GameObject:
   - component: {fileID: 2009555720}
   m_Layer: 0
   m_Name: Square (6)
-  m_TagString: Untagged
+  m_TagString: wall
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -4168,7 +4187,7 @@ PrefabInstance:
     - target: {fileID: 7455853298194667967, guid: 57fc0a2373cd7bb42a637c6b315eed68, type: 3}
       propertyPath: <m_lifeManagement>k__BackingField
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 1624057965}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -4242,7 +4261,7 @@ PrefabInstance:
     - target: {fileID: 7455853298194667967, guid: 57fc0a2373cd7bb42a637c6b315eed68, type: 3}
       propertyPath: <m_lifeManagement>k__BackingField
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 1624057965}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -4316,7 +4335,7 @@ PrefabInstance:
     - target: {fileID: 7455853298194667967, guid: 57fc0a2373cd7bb42a637c6b315eed68, type: 3}
       propertyPath: <m_lifeManagement>k__BackingField
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 1624057965}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []

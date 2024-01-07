@@ -11,7 +11,6 @@ public class LevelManager : MonoBehaviour
 
     private int counter;
 
-
     HashSet<int> levels = new HashSet<int>();
     private List<int> nextLevels = new List<int>();
 
@@ -48,6 +47,8 @@ public class LevelManager : MonoBehaviour
             SceneManager.LoadScene("Level 1");
         else
             LoadRandomNextLevel();
+
+
     }
 
     public void LoadRandomNextLevel()
@@ -85,5 +86,14 @@ public class LevelManager : MonoBehaviour
             nextLevels[k] = nextLevels[n];
             nextLevels[n] = value;
         }
+    }
+
+    public void ExitGame()
+    {
+#if UNITY_EDITOR
+        UnityEditor.EditorApplication.isPlaying = false;
+#else
+            Application.Quit();
+#endif
     }
 }

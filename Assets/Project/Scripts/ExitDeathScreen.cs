@@ -12,6 +12,14 @@ public class ExitDeathScreen : MonoBehaviour
 
     public float time = 0f;
 
+    [SerializeField]
+    public AudioSource deathSource;
+
+    private void Start()
+    {
+        deathSource.Play();
+    }
+
     private void Update()
     {
         time += Time.deltaTime;
