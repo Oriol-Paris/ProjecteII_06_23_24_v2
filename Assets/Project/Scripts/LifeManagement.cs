@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
 public class LifeManagement : MonoBehaviour
@@ -59,5 +60,13 @@ public class LifeManagement : MonoBehaviour
     {
         PlayerPrefs.SetInt("PlayerLives", lives);
         PlayerPrefs.Save();
+    }
+
+    private void Update()
+    {
+        if(lives <= 0)
+        {
+            SceneManager.LoadScene("Death Screen");
+        }
     }
 }

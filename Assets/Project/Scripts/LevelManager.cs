@@ -62,7 +62,7 @@ public class LevelManager : MonoBehaviour
     public void ChangeRandom()
     {
         random = !random;
-        int highestSceneID = SceneManager.sceneCountInBuildSettings - 1; ;
+        int highestSceneID = SceneManager.sceneCountInBuildSettings - 2; ;
 
         levels.Clear();
         levels = new HashSet<int>(Enumerable.Range(1,highestSceneID));
