@@ -15,10 +15,23 @@ public class Throwable : MonoBehaviour
     Material lineMaterial;
     private LineRenderer lineRenderer;
 
+    private bool ShootDone;
+
+    Transform playerTransform;
+    Vector2 originalPos;
+
+
+    [SerializeField]
+    AudioSource hitSource;
+    [SerializeField]
+    AudioSource bounceSource;
+
     void Awake()
     {
         _rb = this.GetComponent<Rigidbody2D>();
         lineRenderer = gameObject.GetComponent<LineRenderer>();
+        ShootDone = false;
+        playerTransform = GetComponent<Transform>();
     }
 
     private void Start()
@@ -28,16 +41,22 @@ public class Throwable : MonoBehaviour
         lineRenderer.endWidth = 0.1f;
         lineRenderer.positionCount = 2;
         lineRenderer.enabled = false;
+        originalPos = transform.position;
     }
 
     //onmouse events possible thanks to monobehaviour + collider2d
     void OnMouseDown()
     {
-        CalculateThrowVector();
-        lineRenderer.enabled = true;
+        if(!ShootDone)
+        {
+            CalculateThrowVector();
+            lineRenderer.enabled = true;
+        }
+       
     }
     void OnMouseDrag()
     {
+        if(!ShootDone)
         CalculateThrowVector();
     }
     void CalculateThrowVector()
@@ -53,9 +72,11 @@ public class Throwable : MonoBehaviour
     {
         Throw();
         lineRenderer.enabled=false;
+        ShootDone=true;
     }
     public void Throw()
     {
+        if(!ShootDone)
         _rb.AddForce(throwVector * multiplyer);
     }
 
@@ -65,5 +86,28 @@ public class Throwable : MonoBehaviour
         Vector3 endPos = startPos + throwVector;
         lineRenderer.SetPosition(0, startPos); 
         lineRenderer.SetPosition(1, endPos);
+    }
+
+
+    public void ReturnOriginalPos()
+    {
+        ShootDone = false;
+        this.transform.position = originalPos;
+        _rb.velocity = Vector3.zero;
+        _rb.angularVelocity = 0;
+        _rb.Sleep();
+    }
+
+    private void OnCollisionEnter2D(Collision2D collision)
+    {
+        if(collision.gameObject.CompareTag("wall"))
+        {
+            bounceSource.Play();
+        }
+        else if(collision.gameObject.CompareTag("spike"))
+        {
+            hitSource.Play();
+        }
+
     }
 }
