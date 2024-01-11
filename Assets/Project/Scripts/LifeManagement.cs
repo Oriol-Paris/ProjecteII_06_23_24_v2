@@ -62,9 +62,14 @@ public class LifeManagement : MonoBehaviour
         PlayerPrefs.Save();
     }
 
+    public void InitializePlayerLives()
+    {
+        PlayerPrefs.SetInt("PlayerLives", startingLives);
+    }
+
     private void Update()
     {
-        if(lives <= 0)
+        if(lives <= 0 && SceneManager.GetActiveScene().name != "Main Menu")
         {
             SceneManager.LoadScene("Death Screen");
         }

@@ -154,6 +154,7 @@ PlayerSettings:
   androidSupportedAspectRatio: 1
   androidMaxAspectRatio: 2.1
   applicationIdentifier:
+    Android: com.DefaultCompany.ProjecteII_06_23_24_v2
     Standalone: com.DefaultCompany.ProjecteII-06-23-24-v2
   buildNumber:
     Bratwurst: 0

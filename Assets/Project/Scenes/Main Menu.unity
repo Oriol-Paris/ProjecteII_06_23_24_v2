@@ -682,6 +682,7 @@ GameObject:
   - component: {fileID: 1374629240}
   - component: {fileID: 1374629239}
   - component: {fileID: 1374629238}
+  - component: {fileID: 1374629241}
   m_Layer: 5
   m_Name: StartButton
   m_TagString: Untagged
@@ -765,6 +766,18 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 1374629241}
+        m_TargetAssemblyTypeName: LifeManagement, Assembly-CSharp
+        m_MethodName: InitializePlayerLives
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1374629239
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -803,6 +816,19 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1374629236}
   m_CullTransparentMesh: 1
+--- !u!114 &1374629241
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1374629236}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 41597256bdf694142bf5a018ef240e04, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  startingLives: 10
 --- !u!1 &1506521897
 GameObject:
   m_ObjectHideFlags: 0
