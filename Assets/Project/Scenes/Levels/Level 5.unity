@@ -170,7 +170,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   <m_throwable>k__BackingField: {fileID: 1840541192}
-  <m_lifeManagement>k__BackingField: {fileID: 0}
+  <m_lifeManagement>k__BackingField: {fileID: 2088726365}
 --- !u!212 &37027676
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -318,7 +318,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   <m_throwable>k__BackingField: {fileID: 1840541192}
-  <m_lifeManagement>k__BackingField: {fileID: 0}
+  <m_lifeManagement>k__BackingField: {fileID: 2088726365}
 --- !u!212 &75363206
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -669,7 +669,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   <m_throwable>k__BackingField: {fileID: 1840541192}
-  <m_lifeManagement>k__BackingField: {fileID: 0}
+  <m_lifeManagement>k__BackingField: {fileID: 2088726365}
 --- !u!212 &227887383
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -817,7 +817,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   <m_throwable>k__BackingField: {fileID: 1840541192}
-  <m_lifeManagement>k__BackingField: {fileID: 0}
+  <m_lifeManagement>k__BackingField: {fileID: 2088726365}
 --- !u!212 &236799224
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -1452,7 +1452,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   <m_throwable>k__BackingField: {fileID: 1840541192}
-  <m_lifeManagement>k__BackingField: {fileID: 0}
+  <m_lifeManagement>k__BackingField: {fileID: 2088726365}
 --- !u!212 &895732038
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -1600,7 +1600,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   <m_throwable>k__BackingField: {fileID: 1840541192}
-  <m_lifeManagement>k__BackingField: {fileID: 0}
+  <m_lifeManagement>k__BackingField: {fileID: 2088726365}
 --- !u!212 &927991310
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -1966,7 +1966,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   <m_throwable>k__BackingField: {fileID: 1840541192}
-  <m_lifeManagement>k__BackingField: {fileID: 0}
+  <m_lifeManagement>k__BackingField: {fileID: 2088726365}
 --- !u!212 &1129275449
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -2114,7 +2114,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   <m_throwable>k__BackingField: {fileID: 1840541192}
-  <m_lifeManagement>k__BackingField: {fileID: 0}
+  <m_lifeManagement>k__BackingField: {fileID: 2088726365}
 --- !u!212 &1249679870
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -2526,7 +2526,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   <m_throwable>k__BackingField: {fileID: 1840541192}
-  <m_lifeManagement>k__BackingField: {fileID: 0}
+  <m_lifeManagement>k__BackingField: {fileID: 2088726365}
 --- !u!212 &1557798900
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -2674,7 +2674,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   <m_throwable>k__BackingField: {fileID: 1840541192}
-  <m_lifeManagement>k__BackingField: {fileID: 0}
+  <m_lifeManagement>k__BackingField: {fileID: 2088726365}
 --- !u!212 &1597336530
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -3012,7 +3012,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   <m_throwable>k__BackingField: {fileID: 1840541192}
-  <m_lifeManagement>k__BackingField: {fileID: 0}
+  <m_lifeManagement>k__BackingField: {fileID: 2088726365}
 --- !u!212 &1917319951
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -3234,6 +3234,17 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: b7900fb592070fa468bb85f93eda4d10, type: 3}
+--- !u!114 &2088726365 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 7989848178881817450, guid: b7900fb592070fa468bb85f93eda4d10, type: 3}
+  m_PrefabInstance: {fileID: 2041251365}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 41597256bdf694142bf5a018ef240e04, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &2484482155576494730
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -3358,7 +3369,7 @@ PrefabInstance:
     - target: {fileID: 7455853298194667967, guid: 57fc0a2373cd7bb42a637c6b315eed68, type: 3}
       propertyPath: <m_lifeManagement>k__BackingField
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 2088726365}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
