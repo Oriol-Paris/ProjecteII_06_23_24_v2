@@ -25,10 +25,12 @@ public class PlatformMovement : MonoBehaviour
     private Vector2 initialPosition;
     private Vector2 targetPosition;
 
+    private Rigidbody2D rb;
+
     void Start()
     {
         if (bounce || allBounce)
-            return;
+            BounceMovement();
         initialPosition = transform.position;
         CalculateTargetPosition();
     }
@@ -38,6 +40,11 @@ public class PlatformMovement : MonoBehaviour
     {
         if (bounce || allBounce)
         {
+            rb = GetComponent<Rigidbody2D>();
+            if (rb == null)
+            {
+                Debug.LogError("Error");
+            }
             BounceMovement();
             return;
         }
@@ -47,37 +54,37 @@ public class PlatformMovement : MonoBehaviour
 
     private void BounceMovement()
     {
-        switch (bounce)
-        {
-            case true:
-                break;
-            case false:
-                break;
-        }
+        float directionX = firstLeft ? -1.0f : 1.0f;
+        float directionY = firstUp ? 1.0f : -1.0f;
+
+        Vector2 direction = new Vector2(directionX, directionY);
+
+        rb.AddForce(direction * velocity);       
     }
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        switch (allBounce)
-        {
-            case true:
-                //loogic
-                return;
-                break;
-            case false:
-                switch (bounce)
-                {
-                    case true:
-                        //if (collision.gameObject.CompareTag("")
-                        //    return;
-                        return;
-                        break;
-                    case false:
-                        return;
-                        break;
-                }
-                break;
-        }
+        //switch (allBounce)
+        //{
+        //    case true:
+        //        //loogic
+        //        return;
+        //        break;
+        //    case false:
+        //        switch (bounce)
+        //        {
+        //            case true:
+        //                if (collision.gameObject.CompareTag("Player"))
+        //                    return;
+
+        //                return;
+        //                break;
+        //            case false:
+        //                return;
+        //                break;
+        //        }
+        //        break;
+        //}
     }
 
     private void CalculateTargetPosition()
