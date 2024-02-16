@@ -398,6 +398,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cb0e3e9d28b1c6d47aee65d2bcd8daf6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  buttonTransform: {fileID: 3667015382682354144}
+  imageTransform: {fileID: 5984957159494484136}
 --- !u!1 &4698587877486443106
 GameObject:
   m_ObjectHideFlags: 0

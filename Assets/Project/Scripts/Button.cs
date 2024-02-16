@@ -5,7 +5,8 @@ using UnityEngine;
 public class Button : MonoBehaviour
 {
     [SerializeField]
-    public bool sticky;
+    public bool sticky = false;
+    private bool hit = false;
     [SerializeField]
     public GameObject unlockable;
 
@@ -22,11 +23,14 @@ public class Button : MonoBehaviour
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        if(collision.gameObject.CompareTag("Player"))
+        if(collision.gameObject.CompareTag("Player") && !hit)
         {
+            Debug.Log("Collision detected");
             if(sticky)
             {
                 playerRb.velocity = Vector3.zero;
+                playerRb.freezeRotation = true;
+                playerRb.freezeRotation = false;
                 playerScript.ToggleShoot();
             }
 
