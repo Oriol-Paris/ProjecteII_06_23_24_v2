@@ -146,6 +146,14 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: -4985260601533522807, guid: a413ace83eb96f242b408458b2aac98e, type: 3}
+      propertyPath: <m_throwable>k__BackingField
+      value: 
+      objectReference: {fileID: 1840541192}
+    - target: {fileID: -4985260601533522807, guid: a413ace83eb96f242b408458b2aac98e, type: 3}
+      propertyPath: <m_lifeManagement>k__BackingField
+      value: 
+      objectReference: {fileID: 1624057965}
     - target: {fileID: 991321914975972171, guid: a413ace83eb96f242b408458b2aac98e, type: 3}
       propertyPath: <m_throwable>k__BackingField
       value: 
@@ -1360,6 +1368,14 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: -4985260601533522807, guid: a413ace83eb96f242b408458b2aac98e, type: 3}
+      propertyPath: <m_throwable>k__BackingField
+      value: 
+      objectReference: {fileID: 1840541192}
+    - target: {fileID: -4985260601533522807, guid: a413ace83eb96f242b408458b2aac98e, type: 3}
+      propertyPath: <m_lifeManagement>k__BackingField
+      value: 
+      objectReference: {fileID: 1624057965}
     - target: {fileID: 991321914975972171, guid: a413ace83eb96f242b408458b2aac98e, type: 3}
       propertyPath: <m_throwable>k__BackingField
       value: 
@@ -1910,7 +1926,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 016f88ed4fc0e2440936c4323686b6ef, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  NextLevelName: Level 1
+  NextLevelName: Level 13
 --- !u!58 &1046983893
 CircleCollider2D:
   m_ObjectHideFlags: 0
