@@ -26,6 +26,12 @@ public class Throwable : MonoBehaviour
     [SerializeField]
     AudioSource bounceSource;
 
+    Camera cam;
+    Vector3 startPoint;
+    Vector3 endPoint;
+
+
+
     void Awake()
     {
         _rb = this.GetComponent<Rigidbody2D>();
@@ -36,12 +42,28 @@ public class Throwable : MonoBehaviour
 
     private void Start()
     {
+        cam = Camera.main; 
         lineRenderer.material = lineMaterial;
         lineRenderer.startWidth = 0.1f;
         lineRenderer.endWidth = 0.1f;
         lineRenderer.positionCount = 2;
         lineRenderer.enabled = false;
         originalPos = transform.position;
+    }
+
+    private void Update()
+    {
+        if(Input.GetMouseButtonDown(0))
+        {
+            startPoint = cam.ScreenToWorldPoint(Input.mousePosition);
+            startPoint.z = 0;
+            Debug.Log(startPoint);
+        }
+        if(Input.GetMouseButtonUp(0)) 
+        {
+            endPoint = cam.ScreenToWorldPoint(Input.mousePosition);
+            endPoint.z = 0;
+        }
     }
 
     //onmouse events possible thanks to monobehaviour + collider2d
@@ -61,9 +83,7 @@ public class Throwable : MonoBehaviour
     }
     void CalculateThrowVector()
     {
-        Vector3 mousePos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
-        //doing vector2 math to ignore the z values in our distance.
-        Vector2 distance = mousePos - this.transform.position;
+        Vector2 distance = startPoint - endPoint;
         //dont normalize the ditance if you want the throw strength to vary
         throwVector = -distance ;
         DrawThrowPath();
