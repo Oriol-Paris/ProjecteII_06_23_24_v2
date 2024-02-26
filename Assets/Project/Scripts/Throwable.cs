@@ -110,4 +110,9 @@ public class Throwable : MonoBehaviour
         }
 
     }
+
+    public void ToggleShoot()
+    {
+        ShootDone = !ShootDone;
+    }
 }
