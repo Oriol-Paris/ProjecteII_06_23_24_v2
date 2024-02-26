@@ -537,7 +537,7 @@ Transform:
   m_Children:
   - {fileID: 195858753}
   m_Father: {fileID: 0}
-  m_RootOrder: 5
+  m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &667593601
 GameObject:
@@ -996,7 +996,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2794377467363803374, guid: b7900fb592070fa468bb85f93eda4d10, type: 3}
       propertyPath: m_RootOrder
-      value: 6
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 2794377467363803374, guid: b7900fb592070fa468bb85f93eda4d10, type: 3}
       propertyPath: m_AnchorMax.x
@@ -1070,6 +1070,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 3107349749102120079, guid: b7900fb592070fa468bb85f93eda4d10, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 3667015382682354144, guid: b7900fb592070fa468bb85f93eda4d10, type: 3}
       propertyPath: m_AnchoredPosition.x
       value: 176
@@ -1077,6 +1081,10 @@ PrefabInstance:
     - target: {fileID: 3846627195700541938, guid: b7900fb592070fa468bb85f93eda4d10, type: 3}
       propertyPath: m_Name
       value: UILevelCanvas
+      objectReference: {fileID: 0}
+    - target: {fileID: 5176541277270869995, guid: b7900fb592070fa468bb85f93eda4d10, type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 5984957159494484136, guid: b7900fb592070fa468bb85f93eda4d10, type: 3}
       propertyPath: m_AnchoredPosition.x
