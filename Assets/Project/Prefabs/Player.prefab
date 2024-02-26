@@ -296,6 +296,7 @@ MonoBehaviour:
   lineMaterial: {fileID: 15303, guid: 0000000000000000f000000000000000, type: 0}
   hitSource: {fileID: 22484595790499221}
   bounceSource: {fileID: 5259739017515844087}
+  bg: {fileID: 3846627195700541938, guid: 18ea1e1364f47ca42b235791ce1f4c4c, type: 3}
 --- !u!120 &1445000094571751612
 LineRenderer:
   serializedVersion: 2
