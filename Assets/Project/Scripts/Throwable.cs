@@ -26,12 +26,17 @@ public class Throwable : MonoBehaviour
     [SerializeField]
     AudioSource bounceSource;
 
+    [SerializeField]
+    private GameObject bg;
+
     void Awake()
     {
         _rb = this.GetComponent<Rigidbody2D>();
         lineRenderer = gameObject.GetComponent<LineRenderer>();
         ShootDone = false;
         playerTransform = GetComponent<Transform>();
+
+        Instantiate(bg, new Vector3(0, 0, 0), Quaternion.identity);
     }
 
     private void Start()
