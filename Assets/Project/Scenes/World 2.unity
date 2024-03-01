@@ -153,7 +153,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   buttonPrefab: {fileID: 1794504422277705392, guid: 05db2da9b69e6774bab10e8b44cce207, type: 3}
   firstLevel: 21
-  lastLevel: 22
+  lastLevel: 27
   content: {fileID: 1192485676}
 --- !u!1 &489075357
 GameObject:
