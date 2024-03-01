@@ -17,6 +17,7 @@ public class LifeManagement : MonoBehaviour
 
     private void Awake()
     {
+        //PlayerPrefs.DeleteAll();
         m_TextMeshPro = GetComponentInChildren<TextMeshProUGUI>();
 
         if (m_TextMeshPro != null )
@@ -48,6 +49,14 @@ public class LifeManagement : MonoBehaviour
         SavePlayersLives();
     }
 
+    public void LifeWin()
+    {
+        lives++;
+
+        UpdateLifeText();
+        SavePlayersLives();
+    }
+
     private void UpdateLifeText()
     {
         if (m_TextMeshPro != null)
@@ -69,7 +78,14 @@ public class LifeManagement : MonoBehaviour
 
     private void Update()
     {
-        if(lives <= 0 && SceneManager.GetActiveScene().name != "Main Menu")
+
+        if (Input.GetKeyDown(KeyCode.Space))
+        {
+            Debug.Log("this not seems to wortk");
+            LifeWin();
+        }
+
+        if (lives <= 0 && SceneManager.GetActiveScene().name != "Main Menu")
         {
             SceneManager.LoadScene("Death Screen");
         }
