@@ -14,13 +14,12 @@ public class LevelManager : MonoBehaviour
     private int counter;
 
     private int createdWorldsNumber = 2;
-    private int createdMenus = 2;
 
     //Cuidado, los siguientes numeros deben actualizarse continuamente
-    int currentLevel1_1Index = 5;
-    int currentLevel1_20Index = 24;
-    int currentLevel2_1Index = 25;
-    int currentLevel2_LastIndex = 31;
+    int currentLevel1_1Index = 4;
+    int currentLevel1_20Index = 23;
+    int currentLevel2_1Index = 24;
+    int currentLevel2_LastIndex = 25;
 
     HashSet<int> levels = new HashSet<int>();
     private List<int> nextLevels = new List<int>();
@@ -69,7 +68,7 @@ public class LevelManager : MonoBehaviour
         random = true;
 
         levels.Clear();
-        levels = new HashSet<int>(Enumerable.Range(5, highestSceneID));
+        levels = new HashSet<int>(Enumerable.Range(1, highestSceneID));
         nextLevels = levels.ToList();
         nextLevels = nextLevels.OrderBy(x => Random.value).ToList();
 
@@ -92,7 +91,7 @@ public class LevelManager : MonoBehaviour
             if (int.TryParse(buttonNumberString, out int buttonIndex))
             {
                 if (buttonIndex >= 1 && buttonIndex <= SceneManager.sceneCountInBuildSettings)
-                    SceneManager.LoadScene(buttonIndex + createdMenus);
+                    SceneManager.LoadScene(buttonIndex + 1);
                 else
                     Debug.Log("Index not found");
             }
@@ -122,8 +121,8 @@ public class LevelManager : MonoBehaviour
     public void NextWorld()
     {
         int currentSceneIndex = SceneManager.GetActiveScene().buildIndex;
-        if (currentSceneIndex >= createdWorldsNumber + createdMenus)
-            SceneManager.LoadScene(3);
+        if (currentSceneIndex >= createdWorldsNumber + 1)
+            SceneManager.LoadScene("World 1");
         else
             SceneManager.LoadScene(currentSceneIndex + 1);
     }
@@ -131,8 +130,8 @@ public class LevelManager : MonoBehaviour
     public void LastWorld()
     {
         int currentSceneIndex = SceneManager.GetActiveScene().buildIndex;
-        if (currentSceneIndex <= createdMenus + 1)
-            SceneManager.LoadScene(createdWorldsNumber + createdMenus);
+        if (currentSceneIndex <= 2)
+            SceneManager.LoadScene(createdWorldsNumber + 1);
         else
             SceneManager.LoadScene(currentSceneIndex - 1);
     }
