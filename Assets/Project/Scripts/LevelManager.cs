@@ -123,7 +123,7 @@ public class LevelManager : MonoBehaviour
     {
         int currentSceneIndex = SceneManager.GetActiveScene().buildIndex;
         if (currentSceneIndex >= createdWorldsNumber + createdMenus)
-            SceneManager.LoadScene("World 1");
+            SceneManager.LoadScene(3);
         else
             SceneManager.LoadScene(currentSceneIndex + 1);
     }
