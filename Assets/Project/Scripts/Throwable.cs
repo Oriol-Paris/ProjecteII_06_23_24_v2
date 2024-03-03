@@ -105,6 +105,11 @@ public class Throwable : MonoBehaviour
 
     public void ReturnOriginalPos()
     {
+        GameButton gameButton = GameObject.FindObjectOfType<GameButton>();
+        if (gameButton != null)
+        {
+            gameButton.unlockable.SetActive(true);
+        }
         ShootDone = false;
         ShootStarted = false;
         this.transform.position = originalPos;
