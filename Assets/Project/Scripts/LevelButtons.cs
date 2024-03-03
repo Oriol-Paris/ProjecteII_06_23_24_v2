@@ -36,7 +36,7 @@ public class LevelButtons : MonoBehaviour
 
             if (button != null)
             {
-                if(i > maxLevel) 
+                if(i - 1 > maxLevel && maxLevel != 1)
                 {
                     button.interactable = false;
                 }
