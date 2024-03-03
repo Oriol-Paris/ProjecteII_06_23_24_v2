@@ -71,6 +71,11 @@ public class Throwable : MonoBehaviour
             lineRenderer.enabled = false;
             ShootDone = true;
         }
+
+        if (ShootDone && Input.GetMouseButtonDown(0))
+        {
+            ReturnOriginalPos();
+        }
     }
 
 

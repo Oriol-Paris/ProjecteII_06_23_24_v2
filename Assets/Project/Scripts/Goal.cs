@@ -25,6 +25,8 @@ public class Goal : MonoBehaviour
     {
         if (collision.CompareTag("Player"))
         {
+            CheckIfNewMaxLevel();
+
             player = collision.GetComponent<Rigidbody2D>();
             StartCoroutine(TransitionFadeIn());
         }
@@ -52,5 +54,11 @@ public class Goal : MonoBehaviour
         transition.SetTrigger("Fade Out");
         yield return new WaitForSeconds(1);
         transitionGameObject.SetActive(false);
+    }
+
+    private void CheckIfNewMaxLevel()
+    {
+        if(SceneManager.GetActiveScene().buildIndex - 1 > PlayerPrefs.GetInt("LevelsCompleted"))
+            PlayerPrefs.SetInt("LevelsCompleted", PlayerPrefs.GetInt("LevelsCompleted") + 1);
     }
 }

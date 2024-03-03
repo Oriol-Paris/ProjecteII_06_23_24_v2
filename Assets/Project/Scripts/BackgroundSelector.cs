@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Rendering;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
@@ -11,7 +12,8 @@ public class BackgroundSelector : MonoBehaviour
 
     private Canvas canvas;
     private RawImage bg;
-    private int indexDiff = 4;
+    private int indexDiff = 1;
+    private Volume postProcess;
 
     // Start is called before the first frame update
     void Start()
@@ -20,10 +22,16 @@ public class BackgroundSelector : MonoBehaviour
         canvas.worldCamera = Camera.main;
 
         bg = GetComponentInChildren<RawImage>();
-        int sceneIndex = SceneManager.GetActiveScene().buildIndex;
-
+        
         if(bg.color.a == 0 )
             bg.color = Color.white;
+
+        SelectBackground();
+    }
+
+    private void SelectBackground()
+    {
+        int sceneIndex = SceneManager.GetActiveScene().buildIndex;
 
         if (sceneIndex <= indexDiff)
         {
@@ -40,6 +48,10 @@ public class BackgroundSelector : MonoBehaviour
         else if (sceneIndex <= 20 + indexDiff)
         {
             bg.texture = backgrounds[3];
+        }
+        else if (sceneIndex <= 27 + indexDiff)
+        {
+            bg.texture = backgrounds[4];
         }
     }
 }
