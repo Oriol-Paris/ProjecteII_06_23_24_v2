@@ -7,15 +7,16 @@ public class PauseMenu : MonoBehaviour
     [SerializeField]
     Animator anim;
 
-    public void Appear()
+    public void Appear(GameObject buttonsToSpawn)
     {
-        StartCoroutine(AppearCoroutine());
+        StartCoroutine(AppearCoroutine(buttonsToSpawn));
     }
 
-    private IEnumerator AppearCoroutine()
+    private IEnumerator AppearCoroutine(GameObject buttonsToSpawn)
     {
         anim.Play("MenuAppear");
         yield return new WaitForSeconds(1f);
+        buttonsToSpawn.SetActive(true);
     }
 
     public void Dissappear()

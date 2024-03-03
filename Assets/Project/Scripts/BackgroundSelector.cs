@@ -14,9 +14,10 @@ public class BackgroundSelector : MonoBehaviour
     private RawImage bg;
     private int indexDiff = 1;
     private Volume postProcess;
+    private Color wallColor;
 
     // Start is called before the first frame update
-    void Start()
+    void Awake()
     {
         canvas = GetComponent<Canvas>();
         canvas.worldCamera = Camera.main;
@@ -40,22 +41,32 @@ public class BackgroundSelector : MonoBehaviour
         else if (sceneIndex <= 7 + indexDiff)
         {
             bg.texture = backgrounds[1];
+            wallColor = new Color(255, 44, 0, 0);
         }
         else if (sceneIndex <= 12 + indexDiff)
         {
             bg.texture = backgrounds[2];
+            wallColor = new Color(25, 0, 255);
         }
         else if (sceneIndex <= 20 + indexDiff)
         {
             bg.texture = backgrounds[3];
+            wallColor = new Color(0, 255, 144);
         }
         else if (sceneIndex <= 29 + indexDiff)
         {
             bg.texture = backgrounds[4];
+            wallColor = new Color(255, 168, 0);
         }
         else if (sceneIndex <= 40 + indexDiff)
         {
             bg.texture = backgrounds[5];
+            wallColor = new Color(0, 0, 0);
         }
+    }
+
+    public Color GetWallColor()
+    {
+        return wallColor;
     }
 }

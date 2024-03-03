@@ -149,4 +149,14 @@ public class LevelManager : MonoBehaviour
         PlayerPrefs.SetInt("LevelsCompleted", 50);
     }
 
+    public void LoadScene(string name)
+    {
+        SceneManager.LoadScene(name);
+    }
+
+    public void LoadScene(int index)
+    {
+        SceneManager.LoadScene(index);
+    }
+
 }
