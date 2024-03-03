@@ -219,6 +219,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: GameManager
       objectReference: {fileID: 0}
+    - target: {fileID: 4569667298617442254, guid: e714dd57d9714d1418587cb0ba37672d, type: 3}
+      propertyPath: backgrounds.Array.size
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 4569667298617442254, guid: e714dd57d9714d1418587cb0ba37672d, type: 3}
+      propertyPath: backgrounds.Array.data[5]
+      value: 
+      objectReference: {fileID: 2800000, guid: 6895c4cf632959e49b4feaff72696d6b, type: 3}
     - target: {fileID: 5656877544863279811, guid: e714dd57d9714d1418587cb0ba37672d, type: 3}
       propertyPath: m_RootOrder
       value: 0
@@ -1582,7 +1590,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 016f88ed4fc0e2440936c4323686b6ef, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  NextLevelName: Level 12
+  NextLevelName: Level 34
 --- !u!58 &1046983893
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -3575,7 +3583,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   <m_throwable>k__BackingField: {fileID: 1840541192}
-  <m_lifeManagement>k__BackingField: {fileID: 0}
 --- !u!1001 &1837885722
 PrefabInstance:
   m_ObjectHideFlags: 0

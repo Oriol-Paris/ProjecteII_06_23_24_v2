@@ -53,5 +53,9 @@ public class BackgroundSelector : MonoBehaviour
         {
             bg.texture = backgrounds[4];
         }
+        else if (sceneIndex <= 40 + indexDiff)
+        {
+            bg.texture = backgrounds[5];
+        }
     }
 }
