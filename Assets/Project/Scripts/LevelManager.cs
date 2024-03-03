@@ -1,15 +1,19 @@
 using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
+using TMPro;
 using UnityEngine;
+using UnityEngine.EventSystems;
 using UnityEngine.SceneManagement;
 
 public class LevelManager : MonoBehaviour
 {
     [SerializeField]
-    public bool random;
 
-    private int counter;
+    public bool random;
+    private int counter = 0;
+
+    int currentLevel1_1Index = 2;
 
     HashSet<int> levels = new HashSet<int>();
     private List<int> nextLevels = new List<int>();
@@ -35,20 +39,72 @@ public class LevelManager : MonoBehaviour
         }
     }
 
-    private void Awake()
+    public void NextScene(string SceneName)
     {
-        random = false;
-        counter = 0;
+        SceneManager.LoadScene(SceneName);
     }
 
-    public void StartGame()
+    public void NextScene(int SceneId)
     {
-        if (!random)
-            SceneManager.LoadScene("Level 1");
+        SceneManager.LoadScene(SceneId);
+    }
+
+    public void StartTower()
+    {
+        LoadRandomNextLevel();
+        int highestSceneID = SceneManager.sceneCountInBuildSettings - 2; ;
+
+        random = true;
+
+        levels.Clear();
+        levels = new HashSet<int>(Enumerable.Range(1, highestSceneID));
+        nextLevels = levels.ToList();
+        nextLevels = nextLevels.OrderBy(x => Random.value).ToList();
+
+        ShuffleLevels();
+    }
+
+    public void Return()
+    {
+        int currentSceneIndex = SceneManager.GetActiveScene().buildIndex;
+        SceneManager.LoadScene(currentSceneIndex-1);
+    }
+
+    public void LoadWorld()
+    {
+        GameObject button = EventSystem.current.currentSelectedGameObject;
+        if (button != null)
+        {
+            string buttonNumberString = button.name.Replace("ButtonWorld", "");
+
+            if (int.TryParse(buttonNumberString, out int buttonIndex))
+            {
+                if (buttonIndex >= 1 && buttonIndex <= SceneManager.sceneCountInBuildSettings)
+                    SceneManager.LoadScene(buttonIndex + 1);
+                else
+                    Debug.Log("Index not found");
+            }
+        }
         else
-            LoadRandomNextLevel();
+            Debug.Log("Name not valid");
+    }
 
-
+    public void LoadLevel()
+    {
+        GameObject button = EventSystem.current.currentSelectedGameObject;
+        if (button != null)
+        {
+            string buttonNumberString = button.name.Replace("ButtonLevel", "");
+            if(int.TryParse(buttonNumberString,out int buttonIndex))
+            {
+                if (buttonIndex >= 1 && buttonIndex <= SceneManager.sceneCountInBuildSettings)
+                    SceneManager.LoadScene(currentLevel1_1Index - 1 + buttonIndex);
+                else
+                    Debug.Log("Index not found");
+            }
+        }
+        else
+            Debug.Log("Name not valid");
     }
 
     public void LoadRandomNextLevel()
@@ -58,20 +114,6 @@ public class LevelManager : MonoBehaviour
         SceneManager.LoadScene(nextSceneID);
 
         counter++;
-    }
-
-    public void ChangeRandom()
-    {
-        random = !random;
-        int highestSceneID = SceneManager.sceneCountInBuildSettings - 2; ;
-
-        levels.Clear();
-        levels = new HashSet<int>(Enumerable.Range(1,highestSceneID));
-        nextLevels = levels.ToList();
-        nextLevels = nextLevels.OrderBy(x => Random.value).ToList();
-        
-        ShuffleLevels();
-
     }
 
     private void ShuffleLevels()
@@ -88,7 +130,7 @@ public class LevelManager : MonoBehaviour
         }
     }
 
-    public void ExitGame()
+    public static void ExitGame()
     {
 #if UNITY_EDITOR
         UnityEditor.EditorApplication.isPlaying = false;
@@ -96,4 +138,20 @@ public class LevelManager : MonoBehaviour
             Application.Quit();
 #endif
     }
+
+    public void UnlockAllLevels()
+    {
+        PlayerPrefs.SetInt("LevelsCompleted", 50);
+    }
+
+    public void LoadScene(string name)
+    {
+        SceneManager.LoadScene(name);
+    }
+
+    public void LoadScene(int index)
+    {
+        SceneManager.LoadScene(index);
+    }
+
 }

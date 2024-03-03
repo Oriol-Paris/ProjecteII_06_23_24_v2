@@ -15,23 +15,29 @@ public class Throwable : MonoBehaviour
     Material lineMaterial;
     private LineRenderer lineRenderer;
 
-    private bool ShootDone;
+    private bool ShootDone = false;
+    private bool ShootStarted = false;
+    private bool inMenu = false;
 
-    Transform playerTransform;
     Vector2 originalPos;
+    Vector2 mouseOriginalPos;
 
+    GameButton button;
 
     [SerializeField]
     AudioSource hitSource;
     [SerializeField]
     AudioSource bounceSource;
 
+    [SerializeField]
+    private GameObject bg;
+
     void Awake()
     {
         _rb = this.GetComponent<Rigidbody2D>();
         lineRenderer = gameObject.GetComponent<LineRenderer>();
         ShootDone = false;
-        playerTransform = GetComponent<Transform>();
+        button = FindAnyObjectByType<GameButton>();
     }
 
     private void Start()
@@ -44,36 +50,47 @@ public class Throwable : MonoBehaviour
         originalPos = transform.position;
     }
 
-    //onmouse events possible thanks to monobehaviour + collider2d
-    void OnMouseDown()
+    private void Update()
     {
-        if(!ShootDone)
+        if(inMenu)
         {
+            return;
+        }
+        if (!ShootStarted && Input.GetMouseButtonDown(0))
+        {
+            mouseOriginalPos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
             CalculateThrowVector();
             lineRenderer.enabled = true;
+            ShootStarted = true;
         }
-       
+        else if (!ShootDone && Input.GetMouseButton(0))
+        {
+            CalculateThrowVector();
+        }
+        if (ShootStarted && Input.GetMouseButtonUp(0))
+        {
+            Throw();
+            lineRenderer.enabled = false;
+            ShootDone = true;
+        }
+
+        if (ShootDone && Input.GetMouseButtonDown(0))
+        {
+            ReturnOriginalPos();
+        }
     }
-    void OnMouseDrag()
-    {
-        if(!ShootDone)
-        CalculateThrowVector();
-    }
+
+
     void CalculateThrowVector()
     {
-        Vector3 mousePos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
+        Vector2 mousePos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
         //doing vector2 math to ignore the z values in our distance.
-        Vector2 distance = mousePos - this.transform.position;
+        Vector2 distance = mousePos - mouseOriginalPos;
         //dont normalize the ditance if you want the throw strength to vary
-        throwVector = -distance ;
+        throwVector = -distance;
         DrawThrowPath();
     }
-    void OnMouseUp()
-    {
-        Throw();
-        lineRenderer.enabled=false;
-        ShootDone=true;
-    }
+
     public void Throw()
     {
         if(!ShootDone)
@@ -88,14 +105,24 @@ public class Throwable : MonoBehaviour
         lineRenderer.SetPosition(1, endPos);
     }
 
-
     public void ReturnOriginalPos()
     {
+        GameButton gameButton = GameObject.FindObjectOfType<GameButton>();
+        if (gameButton != null)
+        {
+            gameButton.unlockable.SetActive(true);
+        }
         ShootDone = false;
+        ShootStarted = false;
         this.transform.position = originalPos;
         _rb.velocity = Vector3.zero;
         _rb.angularVelocity = 0;
         _rb.Sleep();
+
+        if(button != null)
+        {
+            button.ToggleHit();
+        }
     }
 
     private void OnCollisionEnter2D(Collision2D collision)
@@ -109,5 +136,15 @@ public class Throwable : MonoBehaviour
             hitSource.Play();
         }
 
+    }
+    public void ToggleShoot()
+    {
+        ShootStarted = !ShootStarted;
+        ShootDone = !ShootDone;
+    }
+
+    public void ToggleInMenu()
+    {
+        inMenu = !inMenu;
     }
 }
