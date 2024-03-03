@@ -739,7 +739,7 @@ PrefabInstance:
       insertIndex: -1
       addedObject: {fileID: 1781569591}
   m_SourcePrefab: {fileID: 100100000, guid: 16cb09e45f5c16943bbd3c5a506a1e5c, type: 3}
---- !u!1001 &1307084803
+--- !u!1001 &1334244577
 PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
@@ -751,18 +751,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: GameManager
       objectReference: {fileID: 0}
-    - target: {fileID: 4569667298617442254, guid: e714dd57d9714d1418587cb0ba37672d, type: 3}
-      propertyPath: backgrounds.Array.size
-      value: 6
-      objectReference: {fileID: 0}
-    - target: {fileID: 4569667298617442254, guid: e714dd57d9714d1418587cb0ba37672d, type: 3}
-      propertyPath: backgrounds.Array.data[4]
-      value: 
-      objectReference: {fileID: 2800000, guid: 60774bb2a01e5454490089653ef7b78e, type: 3}
-    - target: {fileID: 4569667298617442254, guid: e714dd57d9714d1418587cb0ba37672d, type: 3}
-      propertyPath: backgrounds.Array.data[5]
-      value: 
-      objectReference: {fileID: 2800000, guid: 6895c4cf632959e49b4feaff72696d6b, type: 3}
     - target: {fileID: 5656877544863279811, guid: e714dd57d9714d1418587cb0ba37672d, type: 3}
       propertyPath: m_RootOrder
       value: 0
@@ -805,10 +793,6 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5656877544863279811, guid: e714dd57d9714d1418587cb0ba37672d, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 7451770737169641552, guid: e714dd57d9714d1418587cb0ba37672d, type: 3}
-      propertyPath: m_AnchoredPosition.y
       value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []

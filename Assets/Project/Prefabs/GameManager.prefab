@@ -713,6 +713,14 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 5656877544863279811}
     m_Modifications:
+    - target: {fileID: 112648418394815736, guid: 18ea1e1364f47ca42b235791ce1f4c4c, type: 3}
+      propertyPath: backgrounds.Array.size
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 112648418394815736, guid: 18ea1e1364f47ca42b235791ce1f4c4c, type: 3}
+      propertyPath: backgrounds.Array.data[5]
+      value: 
+      objectReference: {fileID: 2800000, guid: 6895c4cf632959e49b4feaff72696d6b, type: 3}
     - target: {fileID: 267915642595827178, guid: 18ea1e1364f47ca42b235791ce1f4c4c, type: 3}
       propertyPath: m_Camera
       value: 
