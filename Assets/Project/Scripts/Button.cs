@@ -23,9 +23,8 @@ public class GameButton : MonoBehaviour
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        if(collision.gameObject.CompareTag("Player") && !hit)
+        if(collision.gameObject.CompareTag("Player"))
         {
-            Debug.Log("Collision detected");
             if(sticky)
             {
                 playerRb.velocity = Vector3.zero;
@@ -34,8 +33,18 @@ public class GameButton : MonoBehaviour
                 playerScript.ToggleShoot();
             }
 
-            unlockable.SetActive(false);
+            if(!hit)
+            {
+                unlockable.SetActive(false);
+
+                hit = true;
+            }
         }
+    }
+
+    public void ToggleHit()
+    {
+        hit = !hit;
     }
 
 }
