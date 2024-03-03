@@ -11,7 +11,7 @@ public class BackgroundSelector : MonoBehaviour
 
     private Canvas canvas;
     private RawImage bg;
-    private int indexDiff = 3;
+    private int indexDiff = 4;
 
     // Start is called before the first frame update
     void Start()
@@ -21,18 +21,23 @@ public class BackgroundSelector : MonoBehaviour
 
         bg = GetComponentInChildren<RawImage>();
         int sceneIndex = SceneManager.GetActiveScene().buildIndex;
+        bg.color = Color.white;
 
-        if(sceneIndex <= 7 + indexDiff)
+        if (sceneIndex <= indexDiff)
         {
             bg.texture = backgrounds[0];
         }
-        else if (sceneIndex <= 12 + indexDiff)
+        else if (sceneIndex <= 7 + indexDiff)
         {
             bg.texture = backgrounds[1];
         }
-        else if (sceneIndex <= 20 + indexDiff)
+        else if (sceneIndex <= 12 + indexDiff)
         {
             bg.texture = backgrounds[2];
+        }
+        else if (sceneIndex <= 20 + indexDiff)
+        {
+            bg.texture = backgrounds[3];
         }
     }
 }

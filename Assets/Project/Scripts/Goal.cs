@@ -41,7 +41,7 @@ public class Goal : MonoBehaviour
     private IEnumerator TransitionFadeIn()
     {
         Debug.Log("Fade In");
-        player.velocity = Vector3.zero;
+        player.drag = 10;
         transitionGameObject.SetActive(true);
         transition.SetTrigger("Fade In");
         yield return new WaitForSeconds(1);

@@ -50,9 +50,14 @@ public class LevelManager : MonoBehaviour
         counter = 0;
     }
 
-    public void StartGame()
+    public void NextScene(string SceneName)
     {
-            SceneManager.LoadScene("Levels");
+        SceneManager.LoadScene(SceneName);
+    }
+
+    public void NextScene(int SceneId)
+    {
+        SceneManager.LoadScene(SceneId);
     }
 
     public void StartTower()
