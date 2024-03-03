@@ -30,6 +30,7 @@ public class GameButton : MonoBehaviour
                 playerRb.velocity = Vector3.zero;
                 playerRb.freezeRotation = true;
                 playerRb.freezeRotation = false;
+                unlockable.SetActive(false);
                 playerScript.ToggleShoot();
             }
 
