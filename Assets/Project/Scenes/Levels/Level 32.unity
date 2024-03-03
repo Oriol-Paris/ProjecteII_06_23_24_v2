@@ -180,6 +180,10 @@ PrefabInstance:
       propertyPath: <m_throwable>k__BackingField
       value: 
       objectReference: {fileID: 1671935944}
+    - target: {fileID: 3115622769343580620, guid: a413ace83eb96f242b408458b2aac98e, type: 3}
+      propertyPath: <m_throwable>k__BackingField
+      value: 
+      objectReference: {fileID: 1671935944}
     - target: {fileID: 3500872423083379960, guid: a413ace83eb96f242b408458b2aac98e, type: 3}
       propertyPath: m_RootOrder
       value: -1

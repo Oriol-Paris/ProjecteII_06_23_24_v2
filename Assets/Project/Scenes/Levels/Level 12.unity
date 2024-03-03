@@ -182,7 +182,7 @@ PrefabInstance:
     - target: {fileID: 7455853298194667967, guid: 57fc0a2373cd7bb42a637c6b315eed68, type: 3}
       propertyPath: <m_throwable>k__BackingField
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 2484482155576494731}
     - target: {fileID: 7455853298194667967, guid: 57fc0a2373cd7bb42a637c6b315eed68, type: 3}
       propertyPath: <m_lifeManagement>k__BackingField
       value: 
@@ -256,7 +256,7 @@ PrefabInstance:
     - target: {fileID: 7455853298194667967, guid: 57fc0a2373cd7bb42a637c6b315eed68, type: 3}
       propertyPath: <m_throwable>k__BackingField
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 2484482155576494731}
     - target: {fileID: 7455853298194667967, guid: 57fc0a2373cd7bb42a637c6b315eed68, type: 3}
       propertyPath: <m_lifeManagement>k__BackingField
       value: 
@@ -330,7 +330,7 @@ PrefabInstance:
     - target: {fileID: 7455853298194667967, guid: 57fc0a2373cd7bb42a637c6b315eed68, type: 3}
       propertyPath: <m_throwable>k__BackingField
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 2484482155576494731}
     - target: {fileID: 7455853298194667967, guid: 57fc0a2373cd7bb42a637c6b315eed68, type: 3}
       propertyPath: <m_lifeManagement>k__BackingField
       value: 
@@ -404,7 +404,7 @@ PrefabInstance:
     - target: {fileID: 7455853298194667967, guid: 57fc0a2373cd7bb42a637c6b315eed68, type: 3}
       propertyPath: <m_throwable>k__BackingField
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 2484482155576494731}
     - target: {fileID: 7455853298194667967, guid: 57fc0a2373cd7bb42a637c6b315eed68, type: 3}
       propertyPath: <m_lifeManagement>k__BackingField
       value: 
@@ -478,7 +478,7 @@ PrefabInstance:
     - target: {fileID: 7455853298194667967, guid: 57fc0a2373cd7bb42a637c6b315eed68, type: 3}
       propertyPath: <m_throwable>k__BackingField
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 2484482155576494731}
     - target: {fileID: 7455853298194667967, guid: 57fc0a2373cd7bb42a637c6b315eed68, type: 3}
       propertyPath: <m_lifeManagement>k__BackingField
       value: 
@@ -552,7 +552,7 @@ PrefabInstance:
     - target: {fileID: 7455853298194667967, guid: 57fc0a2373cd7bb42a637c6b315eed68, type: 3}
       propertyPath: <m_throwable>k__BackingField
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 2484482155576494731}
     - target: {fileID: 7455853298194667967, guid: 57fc0a2373cd7bb42a637c6b315eed68, type: 3}
       propertyPath: <m_lifeManagement>k__BackingField
       value: 
@@ -626,7 +626,7 @@ PrefabInstance:
     - target: {fileID: 7455853298194667967, guid: 57fc0a2373cd7bb42a637c6b315eed68, type: 3}
       propertyPath: <m_throwable>k__BackingField
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 2484482155576494731}
     - target: {fileID: 7455853298194667967, guid: 57fc0a2373cd7bb42a637c6b315eed68, type: 3}
       propertyPath: <m_lifeManagement>k__BackingField
       value: 
@@ -769,7 +769,7 @@ PrefabInstance:
     - target: {fileID: 7455853298194667967, guid: 57fc0a2373cd7bb42a637c6b315eed68, type: 3}
       propertyPath: <m_throwable>k__BackingField
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 2484482155576494731}
     - target: {fileID: 7455853298194667967, guid: 57fc0a2373cd7bb42a637c6b315eed68, type: 3}
       propertyPath: <m_lifeManagement>k__BackingField
       value: 
@@ -843,7 +843,7 @@ PrefabInstance:
     - target: {fileID: 7455853298194667967, guid: 57fc0a2373cd7bb42a637c6b315eed68, type: 3}
       propertyPath: <m_throwable>k__BackingField
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 2484482155576494731}
     - target: {fileID: 7455853298194667967, guid: 57fc0a2373cd7bb42a637c6b315eed68, type: 3}
       propertyPath: <m_lifeManagement>k__BackingField
       value: 
@@ -991,7 +991,7 @@ PrefabInstance:
     - target: {fileID: 7455853298194667967, guid: 57fc0a2373cd7bb42a637c6b315eed68, type: 3}
       propertyPath: <m_throwable>k__BackingField
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 2484482155576494731}
     - target: {fileID: 7455853298194667967, guid: 57fc0a2373cd7bb42a637c6b315eed68, type: 3}
       propertyPath: <m_lifeManagement>k__BackingField
       value: 
@@ -1065,7 +1065,7 @@ PrefabInstance:
     - target: {fileID: 7455853298194667967, guid: 57fc0a2373cd7bb42a637c6b315eed68, type: 3}
       propertyPath: <m_throwable>k__BackingField
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 2484482155576494731}
     - target: {fileID: 7455853298194667967, guid: 57fc0a2373cd7bb42a637c6b315eed68, type: 3}
       propertyPath: <m_lifeManagement>k__BackingField
       value: 
@@ -1205,7 +1205,7 @@ PrefabInstance:
     - target: {fileID: 7455853298194667967, guid: 57fc0a2373cd7bb42a637c6b315eed68, type: 3}
       propertyPath: <m_throwable>k__BackingField
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 2484482155576494731}
     - target: {fileID: 7455853298194667967, guid: 57fc0a2373cd7bb42a637c6b315eed68, type: 3}
       propertyPath: <m_lifeManagement>k__BackingField
       value: 
@@ -1279,7 +1279,7 @@ PrefabInstance:
     - target: {fileID: 7455853298194667967, guid: 57fc0a2373cd7bb42a637c6b315eed68, type: 3}
       propertyPath: <m_throwable>k__BackingField
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 2484482155576494731}
     - target: {fileID: 7455853298194667967, guid: 57fc0a2373cd7bb42a637c6b315eed68, type: 3}
       propertyPath: <m_lifeManagement>k__BackingField
       value: 
@@ -1353,7 +1353,7 @@ PrefabInstance:
     - target: {fileID: 7455853298194667967, guid: 57fc0a2373cd7bb42a637c6b315eed68, type: 3}
       propertyPath: <m_throwable>k__BackingField
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 2484482155576494731}
     - target: {fileID: 7455853298194667967, guid: 57fc0a2373cd7bb42a637c6b315eed68, type: 3}
       propertyPath: <m_lifeManagement>k__BackingField
       value: 
@@ -1427,7 +1427,7 @@ PrefabInstance:
     - target: {fileID: 7455853298194667967, guid: 57fc0a2373cd7bb42a637c6b315eed68, type: 3}
       propertyPath: <m_throwable>k__BackingField
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 2484482155576494731}
     - target: {fileID: 7455853298194667967, guid: 57fc0a2373cd7bb42a637c6b315eed68, type: 3}
       propertyPath: <m_lifeManagement>k__BackingField
       value: 
@@ -1501,7 +1501,7 @@ PrefabInstance:
     - target: {fileID: 7455853298194667967, guid: 57fc0a2373cd7bb42a637c6b315eed68, type: 3}
       propertyPath: <m_throwable>k__BackingField
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 2484482155576494731}
     - target: {fileID: 7455853298194667967, guid: 57fc0a2373cd7bb42a637c6b315eed68, type: 3}
       propertyPath: <m_lifeManagement>k__BackingField
       value: 
@@ -1644,7 +1644,7 @@ PrefabInstance:
     - target: {fileID: 7455853298194667967, guid: 57fc0a2373cd7bb42a637c6b315eed68, type: 3}
       propertyPath: <m_throwable>k__BackingField
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 2484482155576494731}
     - target: {fileID: 7455853298194667967, guid: 57fc0a2373cd7bb42a637c6b315eed68, type: 3}
       propertyPath: <m_lifeManagement>k__BackingField
       value: 
@@ -1718,7 +1718,7 @@ PrefabInstance:
     - target: {fileID: 7455853298194667967, guid: 57fc0a2373cd7bb42a637c6b315eed68, type: 3}
       propertyPath: <m_throwable>k__BackingField
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 2484482155576494731}
     - target: {fileID: 7455853298194667967, guid: 57fc0a2373cd7bb42a637c6b315eed68, type: 3}
       propertyPath: <m_lifeManagement>k__BackingField
       value: 
@@ -1792,7 +1792,7 @@ PrefabInstance:
     - target: {fileID: 7455853298194667967, guid: 57fc0a2373cd7bb42a637c6b315eed68, type: 3}
       propertyPath: <m_throwable>k__BackingField
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 2484482155576494731}
     - target: {fileID: 7455853298194667967, guid: 57fc0a2373cd7bb42a637c6b315eed68, type: 3}
       propertyPath: <m_lifeManagement>k__BackingField
       value: 
@@ -1971,7 +1971,7 @@ PrefabInstance:
     - target: {fileID: 7455853298194667967, guid: 57fc0a2373cd7bb42a637c6b315eed68, type: 3}
       propertyPath: <m_throwable>k__BackingField
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 2484482155576494731}
     - target: {fileID: 7455853298194667967, guid: 57fc0a2373cd7bb42a637c6b315eed68, type: 3}
       propertyPath: <m_lifeManagement>k__BackingField
       value: 
@@ -2045,7 +2045,7 @@ PrefabInstance:
     - target: {fileID: 7455853298194667967, guid: 57fc0a2373cd7bb42a637c6b315eed68, type: 3}
       propertyPath: <m_throwable>k__BackingField
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 2484482155576494731}
     - target: {fileID: 7455853298194667967, guid: 57fc0a2373cd7bb42a637c6b315eed68, type: 3}
       propertyPath: <m_lifeManagement>k__BackingField
       value: 
@@ -2119,7 +2119,7 @@ PrefabInstance:
     - target: {fileID: 7455853298194667967, guid: 57fc0a2373cd7bb42a637c6b315eed68, type: 3}
       propertyPath: <m_throwable>k__BackingField
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 2484482155576494731}
     - target: {fileID: 7455853298194667967, guid: 57fc0a2373cd7bb42a637c6b315eed68, type: 3}
       propertyPath: <m_lifeManagement>k__BackingField
       value: 
@@ -2193,7 +2193,7 @@ PrefabInstance:
     - target: {fileID: 7455853298194667967, guid: 57fc0a2373cd7bb42a637c6b315eed68, type: 3}
       propertyPath: <m_throwable>k__BackingField
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 2484482155576494731}
     - target: {fileID: 7455853298194667967, guid: 57fc0a2373cd7bb42a637c6b315eed68, type: 3}
       propertyPath: <m_lifeManagement>k__BackingField
       value: 
@@ -2341,7 +2341,7 @@ PrefabInstance:
     - target: {fileID: 7455853298194667967, guid: 57fc0a2373cd7bb42a637c6b315eed68, type: 3}
       propertyPath: <m_throwable>k__BackingField
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 2484482155576494731}
     - target: {fileID: 7455853298194667967, guid: 57fc0a2373cd7bb42a637c6b315eed68, type: 3}
       propertyPath: <m_lifeManagement>k__BackingField
       value: 
@@ -2415,7 +2415,7 @@ PrefabInstance:
     - target: {fileID: 7455853298194667967, guid: 57fc0a2373cd7bb42a637c6b315eed68, type: 3}
       propertyPath: <m_throwable>k__BackingField
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 2484482155576494731}
     - target: {fileID: 7455853298194667967, guid: 57fc0a2373cd7bb42a637c6b315eed68, type: 3}
       propertyPath: <m_lifeManagement>k__BackingField
       value: 
@@ -2562,7 +2562,7 @@ PrefabInstance:
     - target: {fileID: 7455853298194667967, guid: 57fc0a2373cd7bb42a637c6b315eed68, type: 3}
       propertyPath: <m_throwable>k__BackingField
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 2484482155576494731}
     - target: {fileID: 7455853298194667967, guid: 57fc0a2373cd7bb42a637c6b315eed68, type: 3}
       propertyPath: <m_lifeManagement>k__BackingField
       value: 
@@ -2636,7 +2636,7 @@ PrefabInstance:
     - target: {fileID: 7455853298194667967, guid: 57fc0a2373cd7bb42a637c6b315eed68, type: 3}
       propertyPath: <m_throwable>k__BackingField
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 2484482155576494731}
     - target: {fileID: 7455853298194667967, guid: 57fc0a2373cd7bb42a637c6b315eed68, type: 3}
       propertyPath: <m_lifeManagement>k__BackingField
       value: 
@@ -2710,7 +2710,7 @@ PrefabInstance:
     - target: {fileID: 7455853298194667967, guid: 57fc0a2373cd7bb42a637c6b315eed68, type: 3}
       propertyPath: <m_throwable>k__BackingField
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 2484482155576494731}
     - target: {fileID: 7455853298194667967, guid: 57fc0a2373cd7bb42a637c6b315eed68, type: 3}
       propertyPath: <m_lifeManagement>k__BackingField
       value: 
@@ -2784,7 +2784,7 @@ PrefabInstance:
     - target: {fileID: 7455853298194667967, guid: 57fc0a2373cd7bb42a637c6b315eed68, type: 3}
       propertyPath: <m_throwable>k__BackingField
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 2484482155576494731}
     - target: {fileID: 7455853298194667967, guid: 57fc0a2373cd7bb42a637c6b315eed68, type: 3}
       propertyPath: <m_lifeManagement>k__BackingField
       value: 
@@ -2858,7 +2858,7 @@ PrefabInstance:
     - target: {fileID: 7455853298194667967, guid: 57fc0a2373cd7bb42a637c6b315eed68, type: 3}
       propertyPath: <m_throwable>k__BackingField
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 2484482155576494731}
     - target: {fileID: 7455853298194667967, guid: 57fc0a2373cd7bb42a637c6b315eed68, type: 3}
       propertyPath: <m_lifeManagement>k__BackingField
       value: 
@@ -2932,7 +2932,7 @@ PrefabInstance:
     - target: {fileID: 7455853298194667967, guid: 57fc0a2373cd7bb42a637c6b315eed68, type: 3}
       propertyPath: <m_throwable>k__BackingField
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 2484482155576494731}
     - target: {fileID: 7455853298194667967, guid: 57fc0a2373cd7bb42a637c6b315eed68, type: 3}
       propertyPath: <m_lifeManagement>k__BackingField
       value: 
@@ -3006,7 +3006,7 @@ PrefabInstance:
     - target: {fileID: 7455853298194667967, guid: 57fc0a2373cd7bb42a637c6b315eed68, type: 3}
       propertyPath: <m_throwable>k__BackingField
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 2484482155576494731}
     - target: {fileID: 7455853298194667967, guid: 57fc0a2373cd7bb42a637c6b315eed68, type: 3}
       propertyPath: <m_lifeManagement>k__BackingField
       value: 
@@ -3080,7 +3080,7 @@ PrefabInstance:
     - target: {fileID: 7455853298194667967, guid: 57fc0a2373cd7bb42a637c6b315eed68, type: 3}
       propertyPath: <m_throwable>k__BackingField
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 2484482155576494731}
     - target: {fileID: 7455853298194667967, guid: 57fc0a2373cd7bb42a637c6b315eed68, type: 3}
       propertyPath: <m_lifeManagement>k__BackingField
       value: 
@@ -3154,7 +3154,7 @@ PrefabInstance:
     - target: {fileID: 7455853298194667967, guid: 57fc0a2373cd7bb42a637c6b315eed68, type: 3}
       propertyPath: <m_throwable>k__BackingField
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 2484482155576494731}
     - target: {fileID: 7455853298194667967, guid: 57fc0a2373cd7bb42a637c6b315eed68, type: 3}
       propertyPath: <m_lifeManagement>k__BackingField
       value: 
@@ -3228,7 +3228,7 @@ PrefabInstance:
     - target: {fileID: 7455853298194667967, guid: 57fc0a2373cd7bb42a637c6b315eed68, type: 3}
       propertyPath: <m_throwable>k__BackingField
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 2484482155576494731}
     - target: {fileID: 7455853298194667967, guid: 57fc0a2373cd7bb42a637c6b315eed68, type: 3}
       propertyPath: <m_lifeManagement>k__BackingField
       value: 
@@ -3302,7 +3302,7 @@ PrefabInstance:
     - target: {fileID: 7455853298194667967, guid: 57fc0a2373cd7bb42a637c6b315eed68, type: 3}
       propertyPath: <m_throwable>k__BackingField
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 2484482155576494731}
     - target: {fileID: 7455853298194667967, guid: 57fc0a2373cd7bb42a637c6b315eed68, type: 3}
       propertyPath: <m_lifeManagement>k__BackingField
       value: 
@@ -3376,7 +3376,7 @@ PrefabInstance:
     - target: {fileID: 7455853298194667967, guid: 57fc0a2373cd7bb42a637c6b315eed68, type: 3}
       propertyPath: <m_throwable>k__BackingField
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 2484482155576494731}
     - target: {fileID: 7455853298194667967, guid: 57fc0a2373cd7bb42a637c6b315eed68, type: 3}
       propertyPath: <m_lifeManagement>k__BackingField
       value: 
@@ -3455,7 +3455,7 @@ PrefabInstance:
     - target: {fileID: 7455853298194667967, guid: 57fc0a2373cd7bb42a637c6b315eed68, type: 3}
       propertyPath: <m_throwable>k__BackingField
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 2484482155576494731}
     - target: {fileID: 7455853298194667967, guid: 57fc0a2373cd7bb42a637c6b315eed68, type: 3}
       propertyPath: <m_lifeManagement>k__BackingField
       value: 
@@ -3531,3 +3531,14 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 5f0359540e6fbb8419a93ed00e827f73, type: 3}
+--- !u!114 &2484482155576494731 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 7473246311270018882, guid: 5f0359540e6fbb8419a93ed00e827f73, type: 3}
+  m_PrefabInstance: {fileID: 2484482155576494730}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 70d11bb8bbfaf924ca0dd7e09d27940b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
