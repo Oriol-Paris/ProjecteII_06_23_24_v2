@@ -49,7 +49,7 @@ public class BackgroundSelector : MonoBehaviour
         {
             bg.texture = backgrounds[3];
         }
-        else if (sceneIndex <= 27 + indexDiff)
+        else if (sceneIndex <= 29 + indexDiff)
         {
             bg.texture = backgrounds[4];
         }

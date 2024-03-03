@@ -93,6 +93,9 @@ EditorBuildSettings:
     path: Assets/Project/Scenes/Levels/Level 27.unity
     guid: 23816df9ce1a8d6458ffee7578f63d7f
   - enabled: 1
+    path: Assets/Project/Scenes/Levels/Level 28.unity
+    guid: 8e6ff9e151ee5e1479a6b2219ba70aec
+  - enabled: 1
     path: Assets/Project/Scenes/Levels/Too Difficult 2.unity
     guid: c25ca83f3958b294ab8c1feaf3de6776
   - enabled: 1
