@@ -118,7 +118,11 @@ public class Throwable : MonoBehaviour
         _rb.velocity = Vector3.zero;
         _rb.angularVelocity = 0;
         _rb.Sleep();
-        button.ToggleHit();
+
+        if(button != null)
+        {
+            button.ToggleHit();
+        }
     }
 
     private void OnCollisionEnter2D(Collision2D collision)
