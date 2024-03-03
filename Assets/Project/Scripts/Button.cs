@@ -19,23 +19,41 @@ public class GameButton : MonoBehaviour
         player = GameObject.FindGameObjectWithTag("Player");
         playerRb = player.GetComponent<Rigidbody2D>();
         playerScript = player.GetComponent<Throwable>();
+        GetComponent<SpriteRenderer>().material.color = Color.red;
     }
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        if(collision.gameObject.CompareTag("Player") && !hit)
+        if(collision.gameObject.CompareTag("Player"))
         {
-            Debug.Log("Collision detected");
             if(sticky)
             {
                 playerRb.velocity = Vector3.zero;
                 playerRb.freezeRotation = true;
                 playerRb.freezeRotation = false;
+                unlockable.SetActive(false);
                 playerScript.ToggleShoot();
             }
 
-            Destroy(unlockable);
+            if(!hit)
+            {
+                unlockable.SetActive(false);
+                GetComponent<SpriteRenderer>().material.color = Color.green;
+                hit = true;
+            }
         }
+    }
+
+    public void ToggleHit()
+    {
+        hit = !hit;
+
+        if(hit)
+        {
+            GetComponent<SpriteRenderer>().material.color = Color.green;
+        }
+        else
+            GetComponent<SpriteRenderer>().material.color = Color.red;
     }
 
 }

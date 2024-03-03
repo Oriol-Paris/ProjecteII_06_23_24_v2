@@ -7,7 +7,7 @@ using UnityEngine.UI;
 public class Goal : MonoBehaviour
 {
     [SerializeField]
-    public string NextLevelName;
+    List<Sprite> textures;
 
     private Animator transition;
     GameObject transitionGameObject;
@@ -18,6 +18,8 @@ public class Goal : MonoBehaviour
         transitionGameObject = GameObject.FindGameObjectWithTag("Transition");
         transition = transitionGameObject.GetComponent<Animator>();
 
+        GetComponent<SpriteRenderer>().sprite = textures[Random.Range(0, textures.Count - 1)];
+
         StartCoroutine(TransitionFadeOut());
     }
 
@@ -25,6 +27,8 @@ public class Goal : MonoBehaviour
     {
         if (collision.CompareTag("Player"))
         {
+            CheckIfNewMaxLevel();
+
             player = collision.GetComponent<Rigidbody2D>();
             StartCoroutine(TransitionFadeIn());
         }
@@ -33,14 +37,13 @@ public class Goal : MonoBehaviour
     private void LoadNextLevel()
     {
         if (!LevelManager.Instance.random)
-            SceneManager.LoadScene(NextLevelName);
+            SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
         else
             LevelManager.Instance.LoadRandomNextLevel();
     }
 
     private IEnumerator TransitionFadeIn()
     {
-        Debug.Log("Fade In");
         player.drag = 10;
         transitionGameObject.SetActive(true);
         transition.SetTrigger("Fade In");
@@ -50,9 +53,14 @@ public class Goal : MonoBehaviour
 
     private IEnumerator TransitionFadeOut()
     {
-        Debug.Log("Fade Out");
         transition.SetTrigger("Fade Out");
         yield return new WaitForSeconds(1);
         transitionGameObject.SetActive(false);
+    }
+
+    private void CheckIfNewMaxLevel()
+    {
+        if(SceneManager.GetActiveScene().buildIndex - 1 > PlayerPrefs.GetInt("LevelsCompleted"))
+            PlayerPrefs.SetInt("LevelsCompleted", PlayerPrefs.GetInt("LevelsCompleted") + 1);
     }
 }

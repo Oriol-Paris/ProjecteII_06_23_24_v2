@@ -4,20 +4,20 @@ using UnityEngine;
 
 public class KillObject : MonoBehaviour
 {
-    [field: SerializeField]
-    public Throwable m_throwable { get; set; }
 
-    [field: SerializeField]
-    public LifeManagement m_lifeManagement { get; set; }
+    Throwable player;
+
+    private void Start()
+    {
+        player = FindAnyObjectByType<Throwable>();
+    }
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
         if(collision.gameObject.CompareTag("Player"))
         { 
-            if(m_lifeManagement != null)
-                m_lifeManagement.LifeLost();
-            if (m_throwable != null)
-                m_throwable.ReturnOriginalPos();
+            if (player != null)
+                player.ReturnOriginalPos();
         }
     }
 

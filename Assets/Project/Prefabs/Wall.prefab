@@ -10,8 +10,8 @@ GameObject:
   m_Component:
   - component: {fileID: 8889786005961670855}
   - component: {fileID: 8970625718009979583}
-  - component: {fileID: 9020997131997733403}
   - component: {fileID: 997953595807901539}
+  - component: {fileID: 973708965298082645}
   m_Layer: 0
   m_Name: wall
   m_TagString: wall
@@ -74,8 +74,8 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 6ec6431cae1992f4a859e6c5abfb27f5, type: 3}
+  m_SortingOrder: 5
+  m_Sprite: {fileID: 21300000, guid: aa69f2b33bb982f4caa3d108b9cdbe85, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -86,18 +86,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!114 &9020997131997733403
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 601317676100445777}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 23405c543f01fd14ca572f5aa9116791, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!61 &997953595807901539
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -107,7 +95,7 @@ BoxCollider2D:
   m_GameObject: {fileID: 601317676100445777}
   m_Enabled: 1
   m_Density: 1
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 6200000, guid: abe7428fd37ba6b4da1d0d5689ec15b2, type: 2}
   m_IncludeLayers:
     serializedVersion: 2
     m_Bits: 0
@@ -143,6 +131,18 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 12.8, y: 3.2}
   m_EdgeRadius: 0
+--- !u!114 &973708965298082645
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 601317676100445777}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9a9ed644a4abe2847ba763aaa3118cea, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &7207881452233972893
 GameObject:
   m_ObjectHideFlags: 0

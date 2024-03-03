@@ -15,13 +15,14 @@ public class Throwable : MonoBehaviour
     Material lineMaterial;
     private LineRenderer lineRenderer;
 
-    private bool ShootDone;
+    private bool ShootDone = false;
     private bool ShootStarted = false;
     private bool inMenu = false;
 
     Vector2 originalPos;
     Vector2 mouseOriginalPos;
 
+    GameButton button;
 
     [SerializeField]
     AudioSource hitSource;
@@ -36,8 +37,7 @@ public class Throwable : MonoBehaviour
         _rb = this.GetComponent<Rigidbody2D>();
         lineRenderer = gameObject.GetComponent<LineRenderer>();
         ShootDone = false;
-
-        Instantiate(bg, new Vector3(0, 0, 0), Quaternion.identity);
+        button = FindAnyObjectByType<GameButton>();
     }
 
     private void Start()
@@ -73,6 +73,11 @@ public class Throwable : MonoBehaviour
             lineRenderer.enabled = false;
             ShootDone = true;
         }
+
+        if (ShootDone && Input.GetMouseButtonDown(0))
+        {
+            ReturnOriginalPos();
+        }
     }
 
 
@@ -102,12 +107,22 @@ public class Throwable : MonoBehaviour
 
     public void ReturnOriginalPos()
     {
+        GameButton gameButton = GameObject.FindObjectOfType<GameButton>();
+        if (gameButton != null)
+        {
+            gameButton.unlockable.SetActive(true);
+        }
         ShootDone = false;
         ShootStarted = false;
         this.transform.position = originalPos;
         _rb.velocity = Vector3.zero;
         _rb.angularVelocity = 0;
         _rb.Sleep();
+
+        if(button != null)
+        {
+            button.ToggleHit();
+        }
     }
 
     private void OnCollisionEnter2D(Collision2D collision)
@@ -124,6 +139,7 @@ public class Throwable : MonoBehaviour
     }
     public void ToggleShoot()
     {
+        ShootStarted = !ShootStarted;
         ShootDone = !ShootDone;
     }
 

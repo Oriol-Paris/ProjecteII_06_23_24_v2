@@ -11,15 +11,9 @@ public class LevelManager : MonoBehaviour
     [SerializeField]
 
     public bool random;
-    private int counter;
+    private int counter = 0;
 
-    private int createdWorldsNumber = 2;
-
-    //Cuidado, los siguientes numeros deben actualizarse continuamente
-    int currentLevel1_1Index = 4;
-    int currentLevel1_20Index = 23;
-    int currentLevel2_1Index = 24;
-    int currentLevel2_LastIndex = 25;
+    int currentLevel1_1Index = 2;
 
     HashSet<int> levels = new HashSet<int>();
     private List<int> nextLevels = new List<int>();
@@ -43,11 +37,6 @@ public class LevelManager : MonoBehaviour
 
             return instance;
         }
-    }
-
-    private void Awake()
-    {
-        counter = 0;
     }
 
     public void NextScene(string SceneName)
@@ -118,24 +107,6 @@ public class LevelManager : MonoBehaviour
             Debug.Log("Name not valid");
     }
 
-    public void NextWorld()
-    {
-        int currentSceneIndex = SceneManager.GetActiveScene().buildIndex;
-        if (currentSceneIndex >= createdWorldsNumber + 1)
-            SceneManager.LoadScene("World 1");
-        else
-            SceneManager.LoadScene(currentSceneIndex + 1);
-    }
-
-    public void LastWorld()
-    {
-        int currentSceneIndex = SceneManager.GetActiveScene().buildIndex;
-        if (currentSceneIndex <= 2)
-            SceneManager.LoadScene(createdWorldsNumber + 1);
-        else
-            SceneManager.LoadScene(currentSceneIndex - 1);
-    }
-
     public void LoadRandomNextLevel()
     {
         int nextSceneID = nextLevels[counter];
@@ -159,7 +130,7 @@ public class LevelManager : MonoBehaviour
         }
     }
 
-    public void ExitGame()
+    public static void ExitGame()
     {
 #if UNITY_EDITOR
         UnityEditor.EditorApplication.isPlaying = false;
@@ -168,5 +139,19 @@ public class LevelManager : MonoBehaviour
 #endif
     }
 
-    
+    public void UnlockAllLevels()
+    {
+        PlayerPrefs.SetInt("LevelsCompleted", 50);
+    }
+
+    public void LoadScene(string name)
+    {
+        SceneManager.LoadScene(name);
+    }
+
+    public void LoadScene(int index)
+    {
+        SceneManager.LoadScene(index);
+    }
+
 }
