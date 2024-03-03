@@ -8,12 +8,16 @@ public class AudioManager : MonoBehaviour
 
     public AudioSource[] audioTracks;
 
+    float volume;
     void Awake()
     {
         if (instance == null)
         {
             instance = this;
             DontDestroyOnLoad(gameObject);
+
+            SetGlobalVolume(0.5f);
+            SetLoop(0, true);
         }
         else
         {
@@ -51,5 +55,11 @@ public class AudioManager : MonoBehaviour
         {
             Debug.LogWarning("Índice de pista de audio no válido.");
         }
+    }
+
+    public void SetGlobalVolume(float volume)
+    {
+        foreach(AudioSource audioTrack in audioTracks)
+            audioTrack.volume = volume;
     }
 }

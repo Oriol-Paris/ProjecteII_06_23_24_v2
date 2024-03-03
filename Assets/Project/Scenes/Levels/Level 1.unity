@@ -608,6 +608,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 22484595790499221, guid: 5f0359540e6fbb8419a93ed00e827f73, type: 3}
+      propertyPath: Priority
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 1445000094571751612, guid: 5f0359540e6fbb8419a93ed00e827f73, type: 3}
       propertyPath: m_Parameters.colorGradient.m_ColorSpace
       value: -1
@@ -628,6 +632,10 @@ PrefabInstance:
       propertyPath: m_Materials.Array.data[0]
       value: 
       objectReference: {fileID: -876546973899608171, guid: 90b0621015e820e4e9d715e81470d298, type: 3}
+    - target: {fileID: 5259739017515844087, guid: 5f0359540e6fbb8419a93ed00e827f73, type: 3}
+      propertyPath: Priority
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 5530859504974951471, guid: 5f0359540e6fbb8419a93ed00e827f73, type: 3}
       propertyPath: m_RootOrder
       value: 2
