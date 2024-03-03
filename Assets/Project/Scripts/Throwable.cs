@@ -17,6 +17,7 @@ public class Throwable : MonoBehaviour
 
     private bool ShootDone;
     private bool ShootStarted = false;
+    private bool inMenu = false;
 
     Vector2 originalPos;
     Vector2 mouseOriginalPos;
@@ -51,6 +52,10 @@ public class Throwable : MonoBehaviour
 
     private void Update()
     {
+        if(inMenu)
+        {
+            return;
+        }
         if (!ShootStarted && Input.GetMouseButtonDown(0))
         {
             mouseOriginalPos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
@@ -117,9 +122,13 @@ public class Throwable : MonoBehaviour
         }
 
     }
-
     public void ToggleShoot()
     {
         ShootDone = !ShootDone;
+    }
+
+    public void ToggleInMenu()
+    {
+        inMenu = !inMenu;
     }
 }
