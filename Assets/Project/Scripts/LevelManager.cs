@@ -39,14 +39,6 @@ public class LevelManager : MonoBehaviour
         }
     }
 
-    public void Awake()
-    {
-        if (PlayerPrefs.GetInt("LevelsCompleted") < 1)
-        {
-            PlayerPrefs.SetInt("LevelsCompleted", 1);
-        }
-    }
-
     public void NextScene(string SceneName)
     {
         SceneManager.LoadScene(SceneName);
