@@ -16,7 +16,7 @@ public class LevelManager : MonoBehaviour
     private int createdWorldsNumber = 2;
 
     //Cuidado, los siguientes numeros deben actualizarse continuamente
-    int currentLevel1_1Index = 4;
+    int currentLevel1_1Index = 2;
     int currentLevel1_20Index = 23;
     int currentLevel2_1Index = 24;
     int currentLevel2_LastIndex = 25;

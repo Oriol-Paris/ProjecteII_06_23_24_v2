@@ -21,7 +21,9 @@ public class BackgroundSelector : MonoBehaviour
 
         bg = GetComponentInChildren<RawImage>();
         int sceneIndex = SceneManager.GetActiveScene().buildIndex;
-        bg.color = Color.white;
+
+        if(bg.color.a == 0 )
+            bg.color = Color.white;
 
         if (sceneIndex <= indexDiff)
         {

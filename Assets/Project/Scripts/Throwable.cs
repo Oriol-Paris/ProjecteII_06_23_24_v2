@@ -36,8 +36,6 @@ public class Throwable : MonoBehaviour
         _rb = this.GetComponent<Rigidbody2D>();
         lineRenderer = gameObject.GetComponent<LineRenderer>();
         ShootDone = false;
-
-        Instantiate(bg, new Vector3(0, 0, 0), Quaternion.identity);
     }
 
     private void Start()

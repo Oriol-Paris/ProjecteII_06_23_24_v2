@@ -205,8 +205,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   backgrounds:
-  - {fileID: 2800000, guid: bf769f0f820a6ec439979f4c590d5e60, type: 3}
-  - {fileID: 2800000, guid: 32e5668a35bf2a748a79b127136eefb1, type: 3}
   - {fileID: 2800000, guid: f827c557577922f41a39a2c2bad19b79, type: 3}
+  - {fileID: 2800000, guid: 32e5668a35bf2a748a79b127136eefb1, type: 3}
   - {fileID: 2800000, guid: cc508eff40641d3469b60484a6d5f553, type: 3}
+  - {fileID: 2800000, guid: bf769f0f820a6ec439979f4c590d5e60, type: 3}
   - {fileID: 2800000, guid: 60774bb2a01e5454490089653ef7b78e, type: 3}

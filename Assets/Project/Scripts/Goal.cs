@@ -40,7 +40,6 @@ public class Goal : MonoBehaviour
 
     private IEnumerator TransitionFadeIn()
     {
-        Debug.Log("Fade In");
         player.drag = 10;
         transitionGameObject.SetActive(true);
         transition.SetTrigger("Fade In");
@@ -50,7 +49,6 @@ public class Goal : MonoBehaviour
 
     private IEnumerator TransitionFadeOut()
     {
-        Debug.Log("Fade Out");
         transition.SetTrigger("Fade Out");
         yield return new WaitForSeconds(1);
         transitionGameObject.SetActive(false);

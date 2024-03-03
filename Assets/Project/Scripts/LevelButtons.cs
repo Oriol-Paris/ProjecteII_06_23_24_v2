@@ -11,6 +11,7 @@ public class LevelButtons : MonoBehaviour
     public int firstLevel = 1;
     public int lastLevel = 20;
     public Transform content;
+    public TMP_FontAsset font;
 
 
     private void Start()
@@ -26,10 +27,14 @@ public class LevelButtons : MonoBehaviour
         {
             GameObject buttonGo = Instantiate(buttonPrefab, content);
             Button button = buttonGo.GetComponent<Button>();
+            button.image.color = new Color(0, 0, 0, 0.45f);
 
-            if(button != null )
+            if (button != null )
             {
                 TextMeshProUGUI buttonText = buttonGo.GetComponentInChildren<TextMeshProUGUI>();
+                buttonText.color = Color.white;
+                buttonText.font = font;
+                buttonText.fontSize = 90;
 
                 if(buttonText != null)
                     buttonText.text = i.ToString();
