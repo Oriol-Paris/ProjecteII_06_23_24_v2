@@ -32,6 +32,14 @@ public class Throwable : MonoBehaviour
     [SerializeField]
     private GameObject bg;
 
+    //para plataforma movil y sticky button (user case)
+    public bool inMobilePlatform = false;
+    public PlatformMovement platform;
+    //esto
+    protected float currentLerpTime = 0.0f;
+    private float lerpTime = 0.0f;
+    private int currentIndex = 0;
+
     void Awake()
     {
         _rb = this.GetComponent<Rigidbody2D>();
@@ -52,9 +60,27 @@ public class Throwable : MonoBehaviour
 
     private void Update()
     {
-        if(inMenu)
+        if (inMenu)
         {
             return;
+        }
+        if (inMobilePlatform && platform != null)
+        {
+            currentLerpTime = Mathf.Min(currentLerpTime + Time.deltaTime, lerpTime);
+
+            float t = currentLerpTime / lerpTime;
+
+            this.transform.position = Vector2.Lerp(platform.targetPoints[currentIndex],
+                platform.targetPoints[(currentIndex + 1) % platform.targetPoints.Count],
+                platform.movementCurve.Evaluate(t));
+
+            if (currentLerpTime == lerpTime)
+            {
+                int temp = currentIndex;
+                currentIndex = (currentIndex + 1) % platform.targetPoints.Count;
+                lerpTime = Vector2.Distance(platform.targetPoints[temp], platform.targetPoints[currentIndex]) / platform.velocity;
+                currentLerpTime = 0.0f;
+            }
         }
         if (!ShootStarted && Input.GetMouseButtonDown(0))
         {
