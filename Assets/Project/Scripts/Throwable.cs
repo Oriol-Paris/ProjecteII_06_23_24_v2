@@ -36,9 +36,6 @@ public class Throwable : MonoBehaviour
     public bool inMobilePlatform = false;
     public PlatformMovement platform;
     //esto
-    protected float currentLerpTime = 0.0f;
-    private float lerpTime = 0.0f;
-    private int currentIndex = 0;
 
     void Awake()
     {
@@ -66,21 +63,7 @@ public class Throwable : MonoBehaviour
         }
         if (inMobilePlatform && platform != null)
         {
-            currentLerpTime = Mathf.Min(currentLerpTime + Time.deltaTime, lerpTime);
-
-            float t = currentLerpTime / lerpTime;
-
-            this.transform.position = Vector2.Lerp(platform.targetPoints[currentIndex],
-                platform.targetPoints[(currentIndex + 1) % platform.targetPoints.Count],
-                platform.movementCurve.Evaluate(t));
-
-            if (currentLerpTime == lerpTime)
-            {
-                int temp = currentIndex;
-                currentIndex = (currentIndex + 1) % platform.targetPoints.Count;
-                lerpTime = Vector2.Distance(platform.targetPoints[temp], platform.targetPoints[currentIndex]) / platform.velocity;
-                currentLerpTime = 0.0f;
-            }
+            this.transform.position += new Vector3(platform.transform.position.x - this.transform.position.x, 0,0);
         }
         if (!ShootStarted && Input.GetMouseButtonDown(0))
         {
@@ -121,6 +104,7 @@ public class Throwable : MonoBehaviour
     {
         if(!ShootDone)
         _rb.AddForce(throwVector * multiplyer);
+        inMobilePlatform = false;
     }
 
     void DrawThrowPath()
@@ -149,6 +133,7 @@ public class Throwable : MonoBehaviour
         {
             button.ToggleHit();
         }
+        inMobilePlatform = false;
     }
 
     private void OnCollisionEnter2D(Collision2D collision)
@@ -167,6 +152,7 @@ public class Throwable : MonoBehaviour
     {
         ShootStarted = !ShootStarted;
         ShootDone = !ShootDone;
+        inMobilePlatform = false;
     }
 
     public void ToggleInMenu()
