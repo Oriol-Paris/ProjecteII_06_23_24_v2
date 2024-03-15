@@ -14,15 +14,15 @@ public class AudioManager : MonoBehaviour
         if (instance == null)
         {
             instance = this;
-        }
-        else
-        {
-            Destroy(gameObject);
+
+            this.transform.parent = null;
             DontDestroyOnLoad(gameObject);
 
             SetGlobalVolume(0.5f);
             SetLoop(0, true);
         }
+        else
+            Destroy(gameObject);
     }
 
     void Start()
