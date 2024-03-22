@@ -14,6 +14,7 @@ public class Throwable : MonoBehaviour
     [SerializeField]
     Material lineMaterial;
     private LineRenderer lineRenderer;
+    private TrailRenderer trailRenderer;
 
     private bool ShootDone = false;
     private bool ShootStarted = false;
@@ -41,6 +42,7 @@ public class Throwable : MonoBehaviour
     {
         _rb = this.GetComponent<Rigidbody2D>();
         lineRenderer = gameObject.GetComponent<LineRenderer>();
+        trailRenderer = gameObject.GetComponent <TrailRenderer>();
         ShootDone = false;
         button = FindAnyObjectByType<GameButton>();
     }
@@ -128,6 +130,8 @@ public class Throwable : MonoBehaviour
         _rb.velocity = Vector3.zero;
         _rb.angularVelocity = 0;
         _rb.Sleep();
+
+        trailRenderer.Clear();
 
         if(button != null)
         {
