@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class AudioManager : MonoBehaviour
 {
-    private static AudioManager instance;
+    private static AudioManager instance = null;
 
     public AudioSource[] audioTracks;
 
@@ -14,15 +14,15 @@ public class AudioManager : MonoBehaviour
         if (instance == null)
         {
             instance = this;
+
+            this.transform.parent = null;
             DontDestroyOnLoad(gameObject);
 
             SetGlobalVolume(0.5f);
             SetLoop(0, true);
         }
         else
-        {
             Destroy(gameObject);
-        }
     }
 
     void Start()

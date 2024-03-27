@@ -7,7 +7,7 @@ Material:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: Wall
+  m_Name: PlayerNeon
   m_Shader: {fileID: -6465566751694194690, guid: 90b0621015e820e4e9d715e81470d298, type: 3}
   m_Parent: {fileID: 0}
   m_ModifiedSerializedProperties: 0
@@ -46,7 +46,7 @@ Material:
     m_Ints: []
     m_Floats: []
     m_Colors:
-    - _Color: {r: 1, g: 1, b: 1, a: 0}
+    - _Color: {r: 766.99615, g: 766.99615, b: 766.99615, a: 0}
   m_BuildTextureStacks: []
 --- !u!114 &5054513181018024638
 MonoBehaviour:
