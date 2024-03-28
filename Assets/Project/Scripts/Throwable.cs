@@ -38,6 +38,10 @@ public class Throwable : MonoBehaviour
     public PlatformMovement platform;
     //esto
 
+    //Particle system
+    private ParticleSystem particlesForBounce;
+    private ParticleSystem particlesForDead;
+
     void Awake()
     {
         _rb = this.GetComponent<Rigidbody2D>();
@@ -45,6 +49,8 @@ public class Throwable : MonoBehaviour
         trailRenderer = gameObject.GetComponent <TrailRenderer>();
         ShootDone = false;
         button = FindAnyObjectByType<GameButton>();
+        particlesForBounce = transform.Find("Particle System")?.GetComponent<ParticleSystem>();
+        particlesForDead = transform.Find("ParticleSystemDead")?.GetComponent<ParticleSystem>();
     }
 
     private void Start()
@@ -145,10 +151,12 @@ public class Throwable : MonoBehaviour
         if(collision.gameObject.CompareTag("wall"))
         {
             bounceSource.Play();
+            particlesForBounce.Play();
         }
         else if(collision.gameObject.CompareTag("spike"))
         {
             hitSource.Play();
+            particlesForDead.Play();
         }
 
     }
