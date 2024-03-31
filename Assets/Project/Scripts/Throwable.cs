@@ -40,7 +40,8 @@ public class Throwable : MonoBehaviour
 
     //Particle system
     private ParticleSystem particlesForBounce;
-    private ParticleSystem particlesForDead;
+
+    [SerializeField] private GameObject deathEffectPrefab;
 
     void Awake()
     {
@@ -50,7 +51,6 @@ public class Throwable : MonoBehaviour
         ShootDone = false;
         button = FindAnyObjectByType<GameButton>();
         particlesForBounce = transform.Find("Particle System")?.GetComponent<ParticleSystem>();
-        particlesForDead = transform.Find("ParticleSystemDead")?.GetComponent<ParticleSystem>();
     }
 
     private void Start()
@@ -156,7 +156,16 @@ public class Throwable : MonoBehaviour
         else if(collision.gameObject.CompareTag("spike"))
         {
             hitSource.Play();
-            particlesForDead.Play();
+            Vector3 deathPosition = transform.position;
+
+            GameObject deathEffect = Instantiate(deathEffectPrefab, deathPosition, Quaternion.identity);
+
+            ParticleSystem particleSystem = deathEffect.GetComponent<ParticleSystem>();
+            if (particleSystem != null)
+            {
+                particleSystem.Play();
+            }
+            Destroy(deathEffect, 2f);
         }
 
     }
