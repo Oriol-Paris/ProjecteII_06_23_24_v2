@@ -150,6 +150,7 @@ public class Throwable : MonoBehaviour
         if(collision.gameObject.CompareTag("wall"))
         {
             bounceSource.Play();
+
             Instantiate(bounceParticles, collision.contacts[0].point, Quaternion.identity, null).transform.right = collision.contacts[0].normal;
         }
         else if(collision.gameObject.CompareTag("spike"))
