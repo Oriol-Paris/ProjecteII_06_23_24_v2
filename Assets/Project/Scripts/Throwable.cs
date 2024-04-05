@@ -39,7 +39,7 @@ public class Throwable : MonoBehaviour
     //esto
 
     //Particle system
-    private ParticleSystem particlesForBounce;
+    [SerializeField] private GameObject bounceParticles;
 
     [SerializeField] private GameObject deathEffectPrefab;
 
@@ -50,7 +50,6 @@ public class Throwable : MonoBehaviour
         trailRenderer = gameObject.GetComponent <TrailRenderer>();
         ShootDone = false;
         button = FindAnyObjectByType<GameButton>();
-        particlesForBounce = transform.Find("Particle System")?.GetComponent<ParticleSystem>();
     }
 
     private void Start()
@@ -151,7 +150,7 @@ public class Throwable : MonoBehaviour
         if(collision.gameObject.CompareTag("wall"))
         {
             bounceSource.Play();
-            particlesForBounce.Play();
+            Instantiate(bounceParticles, collision.contacts[0].point, Quaternion.identity, null).transform.right = collision.contacts[0].normal;
         }
         else if(collision.gameObject.CompareTag("spike"))
         {
@@ -180,4 +179,5 @@ public class Throwable : MonoBehaviour
     {
         inMenu = !inMenu;
     }
+
 }
