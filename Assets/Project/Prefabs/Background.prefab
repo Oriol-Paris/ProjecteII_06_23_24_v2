@@ -36,8 +36,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0.0000038146973, y: 0.0000076293945}
-  m_SizeDelta: {x: 1450.595, y: 1450.595}
+  m_AnchoredPosition: {x: 0, y: 0.000015259}
+  m_SizeDelta: {x: 1178.4539, y: 1141.2493}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &4129593156479407107
 CanvasRenderer:
@@ -205,8 +205,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   backgrounds:
-  - {fileID: 2800000, guid: f827c557577922f41a39a2c2bad19b79, type: 3}
-  - {fileID: 2800000, guid: 32e5668a35bf2a748a79b127136eefb1, type: 3}
-  - {fileID: 2800000, guid: cc508eff40641d3469b60484a6d5f553, type: 3}
-  - {fileID: 2800000, guid: bf769f0f820a6ec439979f4c590d5e60, type: 3}
-  - {fileID: 2800000, guid: 60774bb2a01e5454490089653ef7b78e, type: 3}
+  - {fileID: 2800000, guid: 60e9efa40a9af144ba0dcc586018b946, type: 3}
+  - {fileID: 2800000, guid: 0a54bbfdb9c70be4db1d99fdbf67b4e0, type: 3}
+  - {fileID: 2800000, guid: 7faa6ad4721228f4485622d10cf64adc, type: 3}
+  - {fileID: 2800000, guid: 89633105aa692f74f8cb3d26815721f6, type: 3}
+  - {fileID: 2800000, guid: 3c469e2cf901f2e41ad86177746bc9af, type: 3}
