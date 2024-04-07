@@ -134,6 +134,7 @@ public class Throwable : MonoBehaviour
         this.transform.position = originalPos;
         _rb.velocity = Vector3.zero;
         _rb.angularVelocity = 0;
+        this.transform.rotation = Quaternion.identity;
         _rb.Sleep();
 
         trailRenderer.Clear();
@@ -155,20 +156,29 @@ public class Throwable : MonoBehaviour
         }
         else if(collision.gameObject.CompareTag("spike"))
         {
-            hitSource.Play();
-            Vector3 deathPosition = transform.position;
-
-            GameObject deathEffect = Instantiate(deathEffectPrefab, deathPosition, Quaternion.identity);
-
-            ParticleSystem particleSystem = deathEffect.GetComponent<ParticleSystem>();
-            if (particleSystem != null)
-            {
-                particleSystem.Play();
-            }
-            Destroy(deathEffect, 2f);
+            StartCoroutine(SpikeHit());
         }
-
     }
+
+    private IEnumerator SpikeHit()
+    {
+        hitSource.Play();
+        Vector3 deathPosition = transform.position;
+
+        GameObject deathEffect = Instantiate(deathEffectPrefab, deathPosition, Quaternion.identity);
+
+        ParticleSystem particleSystem = deathEffect.GetComponent<ParticleSystem>();
+        if (particleSystem != null)
+        {
+            particleSystem.Play();
+        }
+        Destroy(deathEffect, 2f);
+
+        yield return new WaitForSeconds(0.1f);
+
+        ReturnOriginalPos();
+    }
+
     public void ToggleShoot()
     {
         ShootStarted = !ShootStarted;

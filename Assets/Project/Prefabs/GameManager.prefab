@@ -283,7 +283,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: 011dbd3c58327114fbe9dd74a6599f3d, type: 3}
   m_PlayOnAwake: 1
-  m_Volume: 1
+  m_Volume: 0.221
   m_Pitch: 1
   Loop: 0
   Mute: 0
@@ -591,7 +591,7 @@ MonoBehaviour:
     m_AmplitudeGain: 1
     m_FrequencyGain: 1
     m_Duration: 1
-    m_NoiseOffsets: {x: 0, y: 0, z: 0}
+    m_NoiseOffsets: {x: -89.55728, y: 330.16916, z: -534.8423}
 --- !u!1 &5772833392062005612
 GameObject:
   m_ObjectHideFlags: 0
@@ -812,9 +812,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   audioTracks:
-  - {fileID: 7426439199879863332}
   - {fileID: 4910218255671893396}
+  - {fileID: 7426439199879863332}
   - {fileID: 2929406081758969930}
+  play: 1
 --- !u!1 &7606488021121292730
 GameObject:
   m_ObjectHideFlags: 0
@@ -947,7 +948,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: 797e4c6220475634a824276fe5b55163, type: 3}
   m_PlayOnAwake: 1
-  m_Volume: 1
+  m_Volume: 0.23
   m_Pitch: 1
   Loop: 0
   Mute: 0
