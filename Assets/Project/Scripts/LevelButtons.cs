@@ -12,21 +12,26 @@ public class LevelButtons : MonoBehaviour
     public int lastLevel = 20;
     public Transform content;
     public TMP_FontAsset font;
+    public float fontSize;
 
 
     private void Start()
     {
-        GenerateButtons();
         if (PlayerPrefs.GetInt("LevelsCompleted") == 0)
         {
             PlayerPrefs.SetInt("LevelsCompleted", 1);
         }
+        else if (PlayerPrefs.GetInt("LevelsCompleted") > lastLevel)
+        {
+            PlayerPrefs.SetInt("LevelsCompleted", lastLevel);
+        }
+        GenerateButtons();
     }
 
     private void GenerateButtons()
     {
         GridLayoutGroup gridLayout = content.GetComponent<GridLayoutGroup>();
-        int maxLevel = PlayerPrefs.GetInt("LevelsCompleted", 1);
+        int maxUnlockedLevel = PlayerPrefs.GetInt("LevelsCompleted");
 
         for(int i = firstLevel; i <= lastLevel; i++)
         {
@@ -36,7 +41,7 @@ public class LevelButtons : MonoBehaviour
 
             if (button != null)
             {
-                if(i - 1 > maxLevel && maxLevel != 1)
+                if(i > maxUnlockedLevel)
                 {
                     button.interactable = false;
                 }
@@ -44,7 +49,7 @@ public class LevelButtons : MonoBehaviour
                 TextMeshProUGUI buttonText = buttonGo.GetComponentInChildren<TextMeshProUGUI>();
                 buttonText.color = Color.white;
                 buttonText.font = font;
-                buttonText.fontSize = 90;
+                buttonText.fontSize = fontSize;
 
                 if(buttonText != null)
                     buttonText.text = i.ToString();
@@ -58,5 +63,4 @@ public class LevelButtons : MonoBehaviour
         gridLayout.enabled = false;
         gridLayout.enabled = true;
     }
-
 }

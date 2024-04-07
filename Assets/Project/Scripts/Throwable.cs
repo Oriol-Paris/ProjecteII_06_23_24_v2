@@ -14,6 +14,7 @@ public class Throwable : MonoBehaviour
     [SerializeField]
     Material lineMaterial;
     private LineRenderer lineRenderer;
+    private TrailRenderer trailRenderer;
 
     private bool ShootDone = false;
     private bool ShootStarted = false;
@@ -32,10 +33,21 @@ public class Throwable : MonoBehaviour
     [SerializeField]
     private GameObject bg;
 
+    //para plataforma movil y sticky button (user case)
+    public bool inMobilePlatform = false;
+    public PlatformMovement platform;
+    //esto
+
+    //Particle system
+    [SerializeField] private GameObject bounceParticles;
+
+    [SerializeField] private GameObject deathEffectPrefab;
+
     void Awake()
     {
         _rb = this.GetComponent<Rigidbody2D>();
         lineRenderer = gameObject.GetComponent<LineRenderer>();
+        trailRenderer = gameObject.GetComponent <TrailRenderer>();
         ShootDone = false;
         button = FindAnyObjectByType<GameButton>();
     }
@@ -52,9 +64,13 @@ public class Throwable : MonoBehaviour
 
     private void Update()
     {
-        if(inMenu)
+        if (inMenu)
         {
             return;
+        }
+        if (inMobilePlatform && platform != null)
+        {
+            this.transform.position += new Vector3(platform.transform.position.x - this.transform.position.x, 0,0);
         }
         if (!ShootStarted && Input.GetMouseButtonDown(0))
         {
@@ -95,6 +111,7 @@ public class Throwable : MonoBehaviour
     {
         if(!ShootDone)
         _rb.AddForce(throwVector * multiplyer);
+        inMobilePlatform = false;
     }
 
     void DrawThrowPath()
@@ -117,12 +134,16 @@ public class Throwable : MonoBehaviour
         this.transform.position = originalPos;
         _rb.velocity = Vector3.zero;
         _rb.angularVelocity = 0;
+        this.transform.rotation = Quaternion.identity;
         _rb.Sleep();
+
+        trailRenderer.Clear();
 
         if(button != null)
         {
             button.ToggleHit();
         }
+        inMobilePlatform = false;
     }
 
     private void OnCollisionEnter2D(Collision2D collision)
@@ -130,21 +151,44 @@ public class Throwable : MonoBehaviour
         if(collision.gameObject.CompareTag("wall"))
         {
             bounceSource.Play();
+
+            Instantiate(bounceParticles, collision.contacts[0].point, Quaternion.identity, null).transform.right = collision.contacts[0].normal;
         }
         else if(collision.gameObject.CompareTag("spike"))
         {
-            hitSource.Play();
+            StartCoroutine(SpikeHit());
         }
-
     }
+
+    private IEnumerator SpikeHit()
+    {
+        hitSource.Play();
+        Vector3 deathPosition = transform.position;
+
+        GameObject deathEffect = Instantiate(deathEffectPrefab, deathPosition, Quaternion.identity);
+
+        ParticleSystem particleSystem = deathEffect.GetComponent<ParticleSystem>();
+        if (particleSystem != null)
+        {
+            particleSystem.Play();
+        }
+        Destroy(deathEffect, 2f);
+
+        yield return new WaitForSeconds(0.1f);
+
+        ReturnOriginalPos();
+    }
+
     public void ToggleShoot()
     {
         ShootStarted = !ShootStarted;
         ShootDone = !ShootDone;
+        inMobilePlatform = false;
     }
 
     public void ToggleInMenu()
     {
         inMenu = !inMenu;
     }
+
 }

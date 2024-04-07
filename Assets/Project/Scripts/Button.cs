@@ -14,6 +14,9 @@ public class GameButton : MonoBehaviour
     private Rigidbody2D playerRb;
     private Throwable playerScript;
 
+    //para botones mobiles
+    public bool mobile;
+
     private void Start()
     {
         player = GameObject.FindGameObjectWithTag("Player");
@@ -26,6 +29,7 @@ public class GameButton : MonoBehaviour
     {
         if(collision.gameObject.CompareTag("Player"))
         {
+            
             if(sticky)
             {
                 playerRb.velocity = Vector3.zero;
@@ -33,6 +37,13 @@ public class GameButton : MonoBehaviour
                 playerRb.freezeRotation = false;
                 unlockable.SetActive(false);
                 playerScript.ToggleShoot();
+
+                if(mobile)
+                {
+                    playerScript.inMobilePlatform = true;
+                    playerScript.platform = this.GetComponentInParent<PlatformMovement>();
+                }
+                
             }
 
             if(!hit)
@@ -41,6 +52,7 @@ public class GameButton : MonoBehaviour
                 GetComponent<SpriteRenderer>().material.color = Color.green;
                 hit = true;
             }
+
         }
     }
 

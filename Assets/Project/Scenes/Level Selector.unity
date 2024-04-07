@@ -871,8 +871,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -365.7, y: 838.86}
-  m_SizeDelta: {x: 95, y: 95}
+  m_AnchoredPosition: {x: -347.3, y: 838.86}
+  m_SizeDelta: {x: 66.06, y: 60.27}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &301230055
 MonoBehaviour:
@@ -987,9 +987,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   buttonPrefab: {fileID: 1794504422277705392, guid: 05db2da9b69e6774bab10e8b44cce207, type: 3}
   firstLevel: 1
-  lastLevel: 30
+  lastLevel: 34
   content: {fileID: 1180053843}
-  font: {fileID: 11400000, guid: 02f0e7ed448655b4a8f226bf87f20691, type: 2}
+  font: {fileID: 11400000, guid: 6e61f7890c5471945b2e2e0c8f1b8f73, type: 2}
+  fontSize: 140
 --- !u!114 &312973205 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 5017536794776752524, guid: 3a8161afd01d1af42931af8615438fcc, type: 3}
@@ -2154,8 +2155,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: Levels
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 02f0e7ed448655b4a8f226bf87f20691, type: 2}
-  m_sharedMaterial: {fileID: -2885008068781416436, guid: 02f0e7ed448655b4a8f226bf87f20691, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 6e61f7890c5471945b2e2e0c8f1b8f73, type: 2}
+  m_sharedMaterial: {fileID: 2751123532791790587, guid: 6e61f7890c5471945b2e2e0c8f1b8f73, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -2179,8 +2180,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 138.2
-  m_fontSizeBase: 138.2
+  m_fontSize: 170
+  m_fontSizeBase: 170
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
@@ -3072,7 +3073,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 0, y: -121.140015}
+  m_AnchoredPosition: {x: 0, y: -121.14014}
   m_SizeDelta: {x: 0, y: -242.28}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &2048024261
