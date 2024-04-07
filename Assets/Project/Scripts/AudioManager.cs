@@ -41,10 +41,10 @@ public class AudioManager : MonoBehaviour
     {
         while (play)
         {
-            audioTracks[songCounter].Play();
+            audioTracks[songCounter % audioTracks.Length].Play();
 
             yield return new WaitForSeconds(audioTracks[songCounter].clip.length);
-            audioTracks[songCounter].Stop();
+            audioTracks[songCounter % audioTracks.Length].Stop();
 
             songCounter++;
         }
