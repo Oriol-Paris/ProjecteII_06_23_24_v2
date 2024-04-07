@@ -7,6 +7,9 @@ public class AudioManager : MonoBehaviour
     private static AudioManager instance = null;
 
     public AudioSource[] audioTracks;
+    int songCounter;
+
+    public bool play = true;
 
     float volume;
     void Awake()
@@ -18,8 +21,7 @@ public class AudioManager : MonoBehaviour
             this.transform.parent = null;
             DontDestroyOnLoad(gameObject);
 
-            SetGlobalVolume(0.5f);
-            SetLoop(0, true);
+            SetGlobalVolume(0.15f);
         }
         else
             Destroy(gameObject);
@@ -27,34 +29,26 @@ public class AudioManager : MonoBehaviour
 
     void Start()
     {
-        foreach (AudioSource audioTrack in audioTracks)
+        foreach(var track in audioTracks)
         {
-            audioTrack.Play();
+            track.Stop();
         }
+
+        StartCoroutine(ChangeSongs());
     }
 
-    public void SetLoop(int trackIndex, bool loop)
+    IEnumerator ChangeSongs()
     {
-        if (trackIndex >= 0 && trackIndex < audioTracks.Length)
+        while (play)
         {
-            audioTracks[trackIndex].loop = loop;
-        }
-        else
-        {
-            Debug.LogWarning("Índice de pista de audio no válido.");
-        }
-    }
+            audioTracks[songCounter % audioTracks.Length].Play();
 
-    public void StopTrack(int trackIndex)
-    {
-        if (trackIndex >= 0 && trackIndex < audioTracks.Length)
-        {
-            audioTracks[trackIndex].Stop();
+            yield return new WaitForSeconds(audioTracks[songCounter].clip.length);
+            audioTracks[songCounter % audioTracks.Length].Stop();
+
+            songCounter++;
         }
-        else
-        {
-            Debug.LogWarning("Índice de pista de audio no válido.");
-        }
+        yield return null;
     }
 
     public void SetGlobalVolume(float volume)

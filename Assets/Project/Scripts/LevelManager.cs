@@ -94,6 +94,8 @@ public class LevelManager : MonoBehaviour
         GameObject button = EventSystem.current.currentSelectedGameObject;
         if (button != null)
         {
+            GameObject audioManagerMenu = GameObject.FindGameObjectWithTag("audio");
+            Destroy(audioManagerMenu);
             string buttonNumberString = button.name.Replace("ButtonLevel", "");
             if(int.TryParse(buttonNumberString,out int buttonIndex))
             {
