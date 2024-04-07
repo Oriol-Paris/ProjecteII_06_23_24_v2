@@ -38,6 +38,11 @@ public class Throwable : MonoBehaviour
     public PlatformMovement platform;
     //esto
 
+    //Particle system
+    [SerializeField] private GameObject bounceParticles;
+
+    [SerializeField] private GameObject deathEffectPrefab;
+
     void Awake()
     {
         _rb = this.GetComponent<Rigidbody2D>();
@@ -145,10 +150,22 @@ public class Throwable : MonoBehaviour
         if(collision.gameObject.CompareTag("wall"))
         {
             bounceSource.Play();
+
+            Instantiate(bounceParticles, collision.contacts[0].point, Quaternion.identity, null).transform.right = collision.contacts[0].normal;
         }
         else if(collision.gameObject.CompareTag("spike"))
         {
             hitSource.Play();
+            Vector3 deathPosition = transform.position;
+
+            GameObject deathEffect = Instantiate(deathEffectPrefab, deathPosition, Quaternion.identity);
+
+            ParticleSystem particleSystem = deathEffect.GetComponent<ParticleSystem>();
+            if (particleSystem != null)
+            {
+                particleSystem.Play();
+            }
+            Destroy(deathEffect, 2f);
         }
 
     }
@@ -163,4 +180,5 @@ public class Throwable : MonoBehaviour
     {
         inMenu = !inMenu;
     }
+
 }
