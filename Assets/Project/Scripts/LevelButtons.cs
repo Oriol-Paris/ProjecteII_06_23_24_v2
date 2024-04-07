@@ -12,6 +12,7 @@ public class LevelButtons : MonoBehaviour
     public int lastLevel = 20;
     public Transform content;
     public TMP_FontAsset font;
+    public float fontSize;
 
 
     private void Start()
@@ -48,7 +49,7 @@ public class LevelButtons : MonoBehaviour
                 TextMeshProUGUI buttonText = buttonGo.GetComponentInChildren<TextMeshProUGUI>();
                 buttonText.color = Color.white;
                 buttonText.font = font;
-                buttonText.fontSize = 90;
+                buttonText.fontSize = fontSize;
 
                 if(buttonText != null)
                     buttonText.text = i.ToString();

@@ -11,8 +11,6 @@ public class MenuButton : MonoBehaviour
     public MenuButton enterButton;
     [SerializeField]
     public MenuButton exitButton;
-    [SerializeField]
-    public GameObject pauseButtons;
 
     //[SerializeField]
     Throwable player;
@@ -20,14 +18,13 @@ public class MenuButton : MonoBehaviour
     void Start()
     {
         player = FindAnyObjectByType<Throwable>();
-        pauseButtons.SetActive(false);
     }
 
     public void EnterButtonPressed()
     {
         player.ToggleInMenu();
         enterButton.gameObject.SetActive(false);
-        menu.Appear(pauseButtons);
+        menu.Appear();
         exitButton.gameObject.SetActive(true);
     }
 
