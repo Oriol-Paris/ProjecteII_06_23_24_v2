@@ -38,8 +38,6 @@ public class Goal : MonoBehaviour
     {
         if (!LevelManager.Instance.random)
             SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
-        else
-            LevelManager.Instance.LoadRandomNextLevel();
     }
 
     private IEnumerator TransitionFadeIn()

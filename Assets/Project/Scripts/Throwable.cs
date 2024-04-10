@@ -152,7 +152,9 @@ public class Throwable : MonoBehaviour
         {
             bounceSource.Play();
 
-            Instantiate(bounceParticles, collision.contacts[0].point, Quaternion.identity, null).transform.right = collision.contacts[0].normal;
+            GameObject bounceEffect = Instantiate(bounceParticles, collision.contacts[0].point, Quaternion.identity, null);
+            bounceEffect.transform.right = collision.contacts[0].normal;
+            Destroy(bounceEffect, 1.5f);
         }
         else if(collision.gameObject.CompareTag("spike"))
         {
@@ -172,7 +174,7 @@ public class Throwable : MonoBehaviour
         {
             particleSystem.Play();
         }
-        Destroy(deathEffect, 2f);
+        Destroy(deathEffect, 1.5f);
 
         yield return new WaitForSeconds(0.1f);
 
