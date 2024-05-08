@@ -29,6 +29,9 @@ public class Throwable : MonoBehaviour
     double cooldownTeleport = 0.1f;
     double timerTeleport = 0.1f;
 
+    Vector3 lastVelocity;
+    Vector3 lastAcceleration;
+
     [SerializeField]
     AudioSource hitSource;
     [SerializeField]
@@ -169,6 +172,11 @@ public class Throwable : MonoBehaviour
         {
             StartCoroutine(SpikeHit());
         }
+        else if(collision.gameObject.CompareTag("SpeedSaver") && !teleported)
+        {
+            lastVelocity = _rb.velocity;
+            lastAcceleration = _rb.totalForce;
+        }
         else if(collision.gameObject.CompareTag("Teleport") && timerTeleport >= cooldownTeleport)
         {
             timerTeleport = 0.0f;
@@ -212,6 +220,8 @@ public class Throwable : MonoBehaviour
         yield return new WaitForSeconds(0.1f);
 
         this.transform.position = tp.GetDestination().position;
+        _rb.velocity = lastVelocity;
+        _rb.totalForce = lastAcceleration;
 
         teleported = true;
     }
