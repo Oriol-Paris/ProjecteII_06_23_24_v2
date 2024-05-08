@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.Runtime.CompilerServices;
 using UnityEngine;
 
 public class Throwable : MonoBehaviour
@@ -9,7 +10,6 @@ public class Throwable : MonoBehaviour
 
     [SerializeField]
     float multiplyer = 3.0f;
-
 
     [SerializeField]
     Material lineMaterial;
@@ -25,13 +25,14 @@ public class Throwable : MonoBehaviour
 
     GameButton button;
 
+    bool teleported = false;
+    double cooldownTeleport = 0.1f;
+    double timerTeleport = 0.1f;
+
     [SerializeField]
     AudioSource hitSource;
     [SerializeField]
     AudioSource bounceSource;
-
-    [SerializeField]
-    private GameObject bg;
 
     //para plataforma movil y sticky button (user case)
     public bool inMobilePlatform = false;
@@ -93,6 +94,14 @@ public class Throwable : MonoBehaviour
         if (ShootDone && Input.GetMouseButtonDown(0))
         {
             ReturnOriginalPos();
+        }
+
+        if (teleported)
+        {
+            timerTeleport += Time.deltaTime;
+
+            if(timerTeleport >= cooldownTeleport)
+                teleported = false;
         }
     }
 
@@ -160,6 +169,11 @@ public class Throwable : MonoBehaviour
         {
             StartCoroutine(SpikeHit());
         }
+        else if(collision.gameObject.CompareTag("Teleport") && timerTeleport >= cooldownTeleport)
+        {
+            timerTeleport = 0.0f;
+            StartCoroutine(TeleportHit(collision.gameObject.GetComponent<Teleporter>()));
+        }
     }
 
     private IEnumerator SpikeHit()
@@ -179,6 +193,27 @@ public class Throwable : MonoBehaviour
         yield return new WaitForSeconds(0.1f);
 
         ReturnOriginalPos();
+    }
+
+    private IEnumerator TeleportHit(Teleporter tp)
+    {
+        hitSource.Play();
+        Vector3 tpPosition = transform.position;
+
+        GameObject deathEffect = Instantiate(deathEffectPrefab, tpPosition, Quaternion.identity);
+
+        ParticleSystem particleSystem = deathEffect.GetComponent<ParticleSystem>();
+        if (particleSystem != null)
+        {
+            particleSystem.Play();
+        }
+        Destroy(deathEffect, 1.5f);
+
+        yield return new WaitForSeconds(0.1f);
+
+        this.transform.position = tp.GetDestination().position;
+
+        teleported = true;
     }
 
     public void ToggleShoot()
