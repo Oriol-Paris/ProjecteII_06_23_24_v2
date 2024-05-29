@@ -6,16 +6,16 @@ public class PlatformMovement : MonoBehaviour
 {
 
     [SerializeField]
-    private float velocity; //unitsPerSec
+    public float velocity; //unitsPerSec
 
     private Vector2 initialPosition;
 
     [SerializeField]
-    private List<Vector2> targetPoints;
+    public List<Vector2> targetPoints;
 
     [SerializeField]
-    private AnimationCurve movementCurve;
-    private float currentLerpTime = 0.0f;
+    public AnimationCurve movementCurve;
+    protected float currentLerpTime = 0.0f;
     private float lerpTime = 0.0f;
     private int currentIndex = 0;
 

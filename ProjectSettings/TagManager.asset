@@ -6,6 +6,10 @@ TagManager:
   tags:
   - wall
   - spike
+  - Transition
+  - audio
+  - Teleport
+  - SpeedSaver
   layers:
   - Default
   - TransparentFX

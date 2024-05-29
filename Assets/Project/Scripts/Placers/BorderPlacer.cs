@@ -1,8 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
-using UnityEditor.Experimental.GraphView;
 using UnityEngine;
-using UnityEngine.Windows.WebCam;
 
 public class BorderPlacer : MonoBehaviour
 {

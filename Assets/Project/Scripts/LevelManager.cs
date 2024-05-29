@@ -1,15 +1,19 @@
 using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
+using TMPro;
 using UnityEngine;
+using UnityEngine.EventSystems;
 using UnityEngine.SceneManagement;
 
 public class LevelManager : MonoBehaviour
 {
     [SerializeField]
-    public bool random;
 
-    private int counter;
+    public bool random;
+    private int counter = 0;
+
+    int currentLevel1_1Index = 2;
 
     HashSet<int> levels = new HashSet<int>();
     private List<int> nextLevels = new List<int>();
@@ -35,60 +39,43 @@ public class LevelManager : MonoBehaviour
         }
     }
 
-    private void Awake()
+    public void NextScene(string SceneName)
     {
-        random = false;
-        counter = 0;
+        SceneManager.LoadScene(SceneName);
     }
 
-    public void StartGame()
+    public void NextScene(int SceneId)
     {
-        if (!random)
-            SceneManager.LoadScene("Level 1");
-        else
-            LoadRandomNextLevel();
-
-
+        SceneManager.LoadScene(SceneId);
     }
 
-    public void LoadRandomNextLevel()
+    public void Return()
     {
-        int nextSceneID = nextLevels[counter];
-
-        SceneManager.LoadScene(nextSceneID);
-
-        counter++;
+        int currentSceneIndex = SceneManager.GetActiveScene().buildIndex;
+        SceneManager.LoadScene(currentSceneIndex-1);
     }
 
-    public void ChangeRandom()
+    public void LoadLevel()
     {
-        random = !random;
-        int highestSceneID = SceneManager.sceneCountInBuildSettings - 2; ;
-
-        levels.Clear();
-        levels = new HashSet<int>(Enumerable.Range(1,highestSceneID));
-        nextLevels = levels.ToList();
-        nextLevels = nextLevels.OrderBy(x => Random.value).ToList();
-        
-        ShuffleLevels();
-
-    }
-
-    private void ShuffleLevels()
-    {
-        int n = nextLevels.Count;
-
-        while (n > 1)
+        GameObject button = EventSystem.current.currentSelectedGameObject;
+        if (button != null)
         {
-            n--;
-            int k = Random.Range(0, n + 1);
-            int value = nextLevels[k];
-            nextLevels[k] = nextLevels[n];
-            nextLevels[n] = value;
+            GameObject audioManagerMenu = GameObject.FindGameObjectWithTag("audio");
+            Destroy(audioManagerMenu);
+            string buttonNumberString = button.name.Replace("ButtonLevel", "");
+            if(int.TryParse(buttonNumberString,out int buttonIndex))
+            {
+                if (buttonIndex >= 1 && buttonIndex <= SceneManager.sceneCountInBuildSettings)
+                    SceneManager.LoadScene(currentLevel1_1Index - 1 + buttonIndex);
+                else
+                    Debug.Log("Index not found");
+            }
         }
+        else
+            Debug.Log("Name not valid");
     }
 
-    public void ExitGame()
+    public static void ExitGame()
     {
 #if UNITY_EDITOR
         UnityEditor.EditorApplication.isPlaying = false;
@@ -96,4 +83,20 @@ public class LevelManager : MonoBehaviour
             Application.Quit();
 #endif
     }
+
+    public void UnlockAllLevels()
+    {
+        PlayerPrefs.SetInt("LevelsCompleted", 50);
+    }
+
+    public void LoadScene(string name)
+    {
+        SceneManager.LoadScene(name);
+    }
+
+    public void LoadScene(int index)
+    {
+        SceneManager.LoadScene(index);
+    }
+
 }
