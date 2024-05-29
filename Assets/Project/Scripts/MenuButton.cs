@@ -13,11 +13,11 @@ public class MenuButton : MonoBehaviour
     public MenuButton exitButton;
 
     //[SerializeField]
-    Throwable player;
+    Player player;
 
     void Start()
     {
-        player = FindAnyObjectByType<Throwable>();
+        player = FindAnyObjectByType<Player>();
     }
 
     public void EnterButtonPressed()

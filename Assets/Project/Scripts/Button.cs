@@ -12,7 +12,7 @@ public class GameButton : MonoBehaviour
 
     private GameObject player;
     private Rigidbody2D playerRb;
-    private Throwable playerScript;
+    private Player playerScript;
 
     //para botones mobiles
     public bool mobile;
@@ -21,7 +21,7 @@ public class GameButton : MonoBehaviour
     {
         player = GameObject.FindGameObjectWithTag("Player");
         playerRb = player.GetComponent<Rigidbody2D>();
-        playerScript = player.GetComponent<Throwable>();
+        playerScript = player.GetComponent<Player>();
         GetComponent<SpriteRenderer>().material.color = Color.red;
     }
 

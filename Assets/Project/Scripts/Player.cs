@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Runtime.CompilerServices;
 using UnityEngine;
 
-public class Throwable : MonoBehaviour
+public class Player : MonoBehaviour
 {
     Vector3 throwVector;
     Rigidbody2D _rb;
