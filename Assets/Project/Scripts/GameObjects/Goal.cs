@@ -42,7 +42,7 @@ public class Goal : MonoBehaviour
 
     private IEnumerator TransitionFadeIn()
     {
-        player.drag = 10;
+        player.drag = 25;
         transitionGameObject.SetActive(true);
         transition.SetTrigger("Fade In");
         yield return new WaitForSeconds(1);
@@ -58,7 +58,7 @@ public class Goal : MonoBehaviour
 
     private void CheckIfNewMaxLevel()
     {
-        if(SceneManager.GetActiveScene().buildIndex - 1 > PlayerPrefs.GetInt("LevelsCompleted"))
+        if(SceneManager.GetActiveScene().buildIndex - 1 >= PlayerPrefs.GetInt("LevelsCompleted"))
             PlayerPrefs.SetInt("LevelsCompleted", PlayerPrefs.GetInt("LevelsCompleted") + 1);
     }
 }
