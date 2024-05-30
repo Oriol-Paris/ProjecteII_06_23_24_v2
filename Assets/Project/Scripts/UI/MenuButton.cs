@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class MenuButton : MonoBehaviour
 {
@@ -22,6 +23,11 @@ public class MenuButton : MonoBehaviour
         else 
             pauseMenu.SetActive(false);
         player.ToggleInMenu();
+    }
+
+    public void ToMainMenu()
+    {
+        SceneManager.LoadScene("Main Menu");
     }
 
     public void ToggleMute()

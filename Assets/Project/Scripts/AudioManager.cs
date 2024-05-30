@@ -21,7 +21,7 @@ public class AudioManager : MonoBehaviour
             this.transform.parent = null;
             DontDestroyOnLoad(gameObject);
 
-            SetGlobalVolume(0.15f);
+            SetGlobalVolume(1f);
         }
         else
             Destroy(gameObject);
