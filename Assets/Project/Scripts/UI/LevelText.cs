@@ -6,8 +6,11 @@ using UnityEngine.SceneManagement;
 
 public class LevelText : MonoBehaviour
 {
+    [SerializeField]
+    TextMeshProUGUI text;
+
     void Start()
     {
-        this.gameObject.GetComponent<TextMeshProUGUI>().text = SceneManager.GetActiveScene().name;
+        text.SetText(SceneManager.GetActiveScene().name);
     }
 }

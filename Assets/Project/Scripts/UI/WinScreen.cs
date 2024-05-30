@@ -41,7 +41,7 @@ public class WinScreen : MonoBehaviour
         else
             trophy.texture = trophies[0];
 
-        levelText.text = SceneManager.GetActiveScene().name;
-        bounces.text = "You used " + playerBounces + " bounces";
+        levelText.SetText(SceneManager.GetActiveScene().name);
+        bounces.SetText("You used " + playerBounces + " bounces");
     }
 }

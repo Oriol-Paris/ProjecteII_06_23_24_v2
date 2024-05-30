@@ -684,6 +684,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1286db5a9d3c1f14c8597ce88f8d392a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  text: {fileID: 0}
 --- !u!1 &1645102787529337913
 GameObject:
   m_ObjectHideFlags: 0
@@ -832,6 +833,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1286db5a9d3c1f14c8597ce88f8d392a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  text: {fileID: 8411036055851867234}
 --- !u!1 &1645644656908875897
 GameObject:
   m_ObjectHideFlags: 0
@@ -1581,6 +1583,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1286db5a9d3c1f14c8597ce88f8d392a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  text: {fileID: 0}
 --- !u!1 &5624498723718273483
 GameObject:
   m_ObjectHideFlags: 0
@@ -2032,6 +2035,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1286db5a9d3c1f14c8597ce88f8d392a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  text: {fileID: 0}
 --- !u!1 &7489880862580536250
 GameObject:
   m_ObjectHideFlags: 0
@@ -2232,7 +2236,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Main Menu
+  m_text: Restart
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 6e61f7890c5471945b2e2e0c8f1b8f73, type: 2}
   m_sharedMaterial: {fileID: 2751123532791790587, guid: 6e61f7890c5471945b2e2e0c8f1b8f73, type: 2}
@@ -2562,7 +2566,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 3940399068825002307}
         m_TargetAssemblyTypeName: MenuButton, Assembly-CSharp
-        m_MethodName: ToMainMenu
+        m_MethodName: RestartLevel
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}

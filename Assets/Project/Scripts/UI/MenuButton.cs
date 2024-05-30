@@ -51,9 +51,17 @@ public class MenuButton : MonoBehaviour
         SceneManager.LoadScene("Main Menu");
     }
 
+    public void RestartLevel()
+    {
+        SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+    }
+
     public void NextLevel()
     {
-        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
+        if (SceneManager.GetActiveScene().buildIndex == 35)
+            SceneManager.LoadScene("Level Selector");
+        else
+            SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
     }
 
     public void ToggleMute()
