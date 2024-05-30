@@ -38,30 +38,25 @@ public class BackgroundSelector : MonoBehaviour
         {
             bg.texture = backgrounds[0];
         }
-        else if (sceneIndex <= 7 + indexDiff)
+        else if (sceneIndex <= 9 + indexDiff)
         {
             bg.texture = backgrounds[1];
             wallColor = new Color(255, 44, 0, 0);
         }
-        else if (sceneIndex <= 12 + indexDiff)
+        else if (sceneIndex <= 18 + indexDiff)
         {
             bg.texture = backgrounds[2];
-            wallColor = new Color(25, 0, 255);
+            wallColor = new Color(0, 144, 191);
         }
-        else if (sceneIndex <= 20 + indexDiff)
+        else if (sceneIndex <= 30 + indexDiff)
         {
             bg.texture = backgrounds[3];
-            wallColor = new Color(0, 255, 144);
+            wallColor = new Color(40, 191, 0);
         }
-        else if (sceneIndex <= 29 + indexDiff)
+        else if (sceneIndex <= 36 + indexDiff)
         {
             bg.texture = backgrounds[4];
-            wallColor = new Color(255, 168, 0);
-        }
-        else if (sceneIndex <= 50 + indexDiff)
-        {
-            bg.texture = backgrounds[5];
-            wallColor = new Color(248, 0, 250);
+            wallColor = new Color(0, 62, 191);
         }
     }
 

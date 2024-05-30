@@ -238,4 +238,9 @@ public class Player : MonoBehaviour
         inMenu = !inMenu;
     }
 
+    public bool GetInMenu()
+    {
+        return inMenu;
+    }
+
 }

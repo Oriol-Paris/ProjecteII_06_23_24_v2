@@ -56,4 +56,13 @@ public class AudioManager : MonoBehaviour
         foreach(AudioSource audioTrack in audioTracks)
             audioTrack.volume = volume;
     }
+
+    public void ToggleMute()
+    {
+        foreach (AudioSource audioTrack in audioTracks)
+            if(!audioTrack.mute)
+                audioTrack.mute = true;
+            else
+                audioTrack.mute = false;
+    }
 }
