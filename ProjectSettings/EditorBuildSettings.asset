@@ -114,10 +114,10 @@ EditorBuildSettings:
     path: Assets/Project/Scenes/Levels/Level 34.unity
     guid: 1cd328dc1fbd0f642b4f76665af68589
   - enabled: 1
-    path: Assets/Project/Scenes/Levels/Level 35.unity
+    path: Assets/Project/Scenes/Levels/Level 34.unity
     guid: 891657c78d3998047bc84255f3bde132
   - enabled: 1
-    path: Assets/Project/Scenes/Levels/Level 36.unity
+    path: Assets/Project/Scenes/Levels/Level 35.unity
     guid: d2d00fe806d45384185180f3617a9ac0
   - enabled: 1
     path: Assets/Project/Scenes/Levels/Not finished.unity

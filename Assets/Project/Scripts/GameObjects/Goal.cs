@@ -9,51 +9,27 @@ public class Goal : MonoBehaviour
     [SerializeField]
     List<Sprite> textures;
 
-    private Animator transition;
-    GameObject transitionGameObject;
-    private Rigidbody2D player;
+    private Fade fade;
 
     void Start()
     {
-        transitionGameObject = GameObject.FindGameObjectWithTag("Transition");
-        transition = transitionGameObject.GetComponent<Animator>();
+        fade = FindAnyObjectByType<Fade>();
 
         GetComponent<SpriteRenderer>().sprite = textures[Random.Range(0, textures.Count - 1)];
 
-        StartCoroutine(TransitionFadeOut());
+        StartCoroutine(fade.TransitionFadeOut());
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.CompareTag("Player"))
         {
+            FindAnyObjectByType<Player>().GetComponent<Rigidbody2D>().drag = 25;
+
             CheckIfNewMaxLevel();
-
-            player = collision.GetComponent<Rigidbody2D>();
-            StartCoroutine(TransitionFadeIn());
+            StartCoroutine(fade.TransitionFadeIn());
+            FindAnyObjectByType<MenuButton>().EnterWinScreen();
         }
-    }
-
-    private void LoadNextLevel()
-    {
-        if (!LevelManager.Instance.random)
-            SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
-    }
-
-    private IEnumerator TransitionFadeIn()
-    {
-        player.drag = 25;
-        transitionGameObject.SetActive(true);
-        transition.SetTrigger("Fade In");
-        yield return new WaitForSeconds(1);
-        LoadNextLevel();
-    }
-
-    private IEnumerator TransitionFadeOut()
-    {
-        transition.SetTrigger("Fade Out");
-        yield return new WaitForSeconds(1);
-        transitionGameObject.SetActive(false);
     }
 
     private void CheckIfNewMaxLevel()

@@ -29,6 +29,8 @@ public class Player : MonoBehaviour
     double cooldownTeleport = 0.1f;
     double timerTeleport = 0.1f;
 
+    int bounces;
+
     Vector3 lastVelocity;
     Vector3 lastAcceleration;
 
@@ -54,6 +56,7 @@ public class Player : MonoBehaviour
         trailRenderer = gameObject.GetComponent <TrailRenderer>();
         ShootDone = false;
         button = FindAnyObjectByType<GameButton>();
+        bounces = 0;
     }
 
     private void Start()
@@ -147,6 +150,7 @@ public class Player : MonoBehaviour
         _rb.velocity = Vector3.zero;
         _rb.angularVelocity = 0;
         this.transform.rotation = Quaternion.identity;
+        bounces = 0;
         _rb.Sleep();
 
         trailRenderer.Clear();
@@ -160,6 +164,8 @@ public class Player : MonoBehaviour
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
+        bounces++;
+
         if(collision.gameObject.CompareTag("wall"))
         {
             bounceSource.Play();
@@ -171,11 +177,6 @@ public class Player : MonoBehaviour
         else if(collision.gameObject.CompareTag("spike"))
         {
             StartCoroutine(SpikeHit());
-        }
-        else if(collision.gameObject.CompareTag("SpeedSaver") && !teleported)
-        {
-            lastVelocity = _rb.velocity;
-            lastAcceleration = _rb.totalForce;
         }
         else if(collision.gameObject.CompareTag("Teleport") && timerTeleport >= cooldownTeleport)
         {
@@ -238,9 +239,20 @@ public class Player : MonoBehaviour
         inMenu = !inMenu;
     }
 
+    public void ToggleMute()
+    {
+        hitSource.mute = !hitSource.mute;
+        bounceSource.mute = !bounceSource.mute;
+    }
+
     public bool GetInMenu()
     {
         return inMenu;
+    }
+
+    public int GetBounces()
+    {
+        return bounces;
     }
 
 }

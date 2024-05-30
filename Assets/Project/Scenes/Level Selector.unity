@@ -987,7 +987,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   buttonPrefab: {fileID: 1794504422277705392, guid: 05db2da9b69e6774bab10e8b44cce207, type: 3}
   firstLevel: 1
-  lastLevel: 36
+  lastLevel: 34
   content: {fileID: 1180053843}
   font: {fileID: 11400000, guid: 6e61f7890c5471945b2e2e0c8f1b8f73, type: 2}
   fontSize: 140
