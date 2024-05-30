@@ -21,7 +21,7 @@ public class AudioManager : MonoBehaviour
             this.transform.parent = null;
             DontDestroyOnLoad(gameObject);
 
-            SetGlobalVolume(0.15f);
+            SetGlobalVolume(1f);
         }
         else
             Destroy(gameObject);
@@ -55,5 +55,14 @@ public class AudioManager : MonoBehaviour
     {
         foreach(AudioSource audioTrack in audioTracks)
             audioTrack.volume = volume;
+    }
+
+    public void ToggleMute()
+    {
+        foreach (AudioSource audioTrack in audioTracks)
+            if(!audioTrack.mute)
+                audioTrack.mute = true;
+            else
+                audioTrack.mute = false;
     }
 }

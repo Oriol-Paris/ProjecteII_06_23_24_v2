@@ -8,6 +8,9 @@ TagManager:
   - spike
   - Transition
   - audio
+  - Teleport
+  - SpeedSaver
+  - GameObjects
   layers:
   - Default
   - TransparentFX

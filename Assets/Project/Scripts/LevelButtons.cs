@@ -37,7 +37,7 @@ public class LevelButtons : MonoBehaviour
         {
             GameObject buttonGo = Instantiate(buttonPrefab, content);
             Button button = buttonGo.GetComponent<Button>();
-            button.image.color = new Color(0, 0, 0, 0.45f);
+            button.image.color = new Color(1, 1, 1, 0.85f);
 
             if (button != null)
             {
@@ -47,7 +47,12 @@ public class LevelButtons : MonoBehaviour
                 }
 
                 TextMeshProUGUI buttonText = buttonGo.GetComponentInChildren<TextMeshProUGUI>();
-                buttonText.color = Color.white;
+
+                if(button.interactable == true)
+                    buttonText.color = Color.black;
+                else
+                    buttonText.color = Color.white;
+
                 buttonText.font = font;
                 buttonText.fontSize = fontSize;
 
