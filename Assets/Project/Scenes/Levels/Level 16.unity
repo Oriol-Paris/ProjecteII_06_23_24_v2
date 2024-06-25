@@ -836,6 +836,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 1840541192}
     - target: {fileID: 1572291925587757023, guid: a413ace83eb96f242b408458b2aac98e, type: 3}
+      propertyPath: velocity
+      value: 12
+      objectReference: {fileID: 0}
+    - target: {fileID: 1572291925587757023, guid: a413ace83eb96f242b408458b2aac98e, type: 3}
       propertyPath: targetPoints.Array.data[0].x
       value: -5.5
       objectReference: {fileID: 0}
@@ -1931,7 +1935,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1722657049730704557, guid: 36ef2c9d092646344a4d9a26fb4e0ddb, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 10.75
+      value: 11.18
       objectReference: {fileID: 0}
     - target: {fileID: 1722657049730704557, guid: 36ef2c9d092646344a4d9a26fb4e0ddb, type: 3}
       propertyPath: m_LocalPosition.z
@@ -3800,6 +3804,10 @@ PrefabInstance:
       propertyPath: <m_throwable>k__BackingField
       value: 
       objectReference: {fileID: 1840541192}
+    - target: {fileID: 1572291925587757023, guid: a413ace83eb96f242b408458b2aac98e, type: 3}
+      propertyPath: velocity
+      value: 12
+      objectReference: {fileID: 0}
     - target: {fileID: 2961152425668170692, guid: a413ace83eb96f242b408458b2aac98e, type: 3}
       propertyPath: <m_throwable>k__BackingField
       value: 
