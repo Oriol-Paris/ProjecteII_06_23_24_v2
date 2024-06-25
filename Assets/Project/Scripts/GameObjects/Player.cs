@@ -25,15 +25,7 @@ public class Player : MonoBehaviour
 
     GameButton button;
 
-    bool teleported = false;
-    double cooldownTeleport = 0.1f;
-    double timerTeleport = 0.1f;
-
     int bounces;
-
-    Vector3 lastVelocity;
-    Vector3 lastAcceleration;
-
     [SerializeField]
     AudioSource hitSource;
     [SerializeField]
@@ -100,14 +92,6 @@ public class Player : MonoBehaviour
         if (ShootDone && Input.GetMouseButtonDown(0))
         {
             ReturnOriginalPos();
-        }
-
-        if (teleported)
-        {
-            timerTeleport += Time.deltaTime;
-
-            if(timerTeleport >= cooldownTeleport)
-                teleported = false;
         }
     }
 
@@ -178,10 +162,9 @@ public class Player : MonoBehaviour
         {
             StartCoroutine(SpikeHit());
         }
-        else if(collision.gameObject.CompareTag("Teleport") && timerTeleport >= cooldownTeleport)
+        else if(collision.gameObject.CompareTag("Teleport"))
         {
-            timerTeleport = 0.0f;
-            StartCoroutine(TeleportHit(collision.gameObject.GetComponent<Teleporter>()));
+            Teleport(collision.gameObject.GetComponent<Teleporter>());
         }
     }
 
@@ -204,7 +187,7 @@ public class Player : MonoBehaviour
         ReturnOriginalPos();
     }
 
-    private IEnumerator TeleportHit(Teleporter tp)
+    public void Teleport(Teleporter tp)
     {
         hitSource.Play();
         Vector3 tpPosition = transform.position;
@@ -218,13 +201,8 @@ public class Player : MonoBehaviour
         }
         Destroy(deathEffect, 1.5f);
 
-        yield return new WaitForSeconds(0.1f);
-
         this.transform.position = tp.GetDestination().position;
-        _rb.velocity = lastVelocity;
-        _rb.totalForce = lastAcceleration;
-
-        teleported = true;
+        _rb.velocity = _rb.velocity.magnitude * tp.GetDestination().up;
     }
 
     public void ToggleShoot()
