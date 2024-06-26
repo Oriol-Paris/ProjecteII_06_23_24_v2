@@ -45,8 +45,12 @@ public class GameButton : MonoBehaviour
                 }
                 
             }
+            else
+            {
+                unlockable.SetActive(false);
+            }
 
-            if(!hit)
+            if (!hit)
             {
                 unlockable.SetActive(false);
                 GetComponent<SpriteRenderer>().material.color = Color.green;
