@@ -39,5 +39,7 @@ public class RotationPlatform : MonoBehaviour
 
         transform.Rotate(Vector3.forward, rotationAmount);
 
+        Debug.Log(this.transform.localScale);
+
     }
 }
