@@ -37,7 +37,7 @@ public class LevelButtons : MonoBehaviour
         {
             GameObject buttonGo = Instantiate(buttonPrefab, content);
             Button button = buttonGo.GetComponent<Button>();
-            button.image.color = new Color(1, 1, 1, 0.85f);
+            button.image.color = new Color(1, 1, 1, 1f);
 
             if (button != null)
             {
