@@ -126,6 +126,7 @@ public class Player : MonoBehaviour
         this.transform.position = originalPos;
         _rb.velocity = Vector3.zero;
         _rb.angularVelocity = 0;
+        _rb.drag = 0.3f;
         this.transform.rotation = Quaternion.identity;
         bounces = 0;
         _rb.Sleep();
