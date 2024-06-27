@@ -99,9 +99,7 @@ public class Player : MonoBehaviour
     void CalculateThrowVector()
     {
         Vector2 mousePos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
-        //doing vector2 math to ignore the z values in our distance.
         Vector2 distance = mousePos - mouseOriginalPos;
-        //dont normalize the ditance if you want the throw strength to vary
         throwVector = -distance;
         DrawThrowPath();
     }
@@ -123,11 +121,6 @@ public class Player : MonoBehaviour
 
     public void ReturnOriginalPos()
     {
-        GameButton gameButton = GameObject.FindObjectOfType<GameButton>();
-        if (gameButton != null)
-        {
-            gameButton.unlockable.SetActive(true);
-        }
         ShootDone = false;
         ShootStarted = false;
         this.transform.position = originalPos;
@@ -140,9 +133,8 @@ public class Player : MonoBehaviour
         trailRenderer.Clear();
 
         if(button != null)
-        {
-            button.ToggleHit();
-        }
+            button.ResetHit();
+
         inMobilePlatform = false;
     }
 
@@ -162,7 +154,12 @@ public class Player : MonoBehaviour
         {
             StartCoroutine(SpikeHit());
         }
-        else if(collision.gameObject.CompareTag("Teleport"))
+        
+    }
+
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if (collision.gameObject.CompareTag("Teleport"))
         {
             Teleport(collision.gameObject.GetComponent<Teleporter>());
         }
@@ -170,6 +167,8 @@ public class Player : MonoBehaviour
 
     private IEnumerator SpikeHit()
     {
+        _rb.drag = 25;
+
         hitSource.Play();
         Vector3 deathPosition = transform.position;
 
@@ -212,25 +211,15 @@ public class Player : MonoBehaviour
         inMobilePlatform = false;
     }
 
-    public void ToggleInMenu()
-    {
-        inMenu = !inMenu;
-    }
-
     public void ToggleMute()
     {
         hitSource.mute = !hitSource.mute;
         bounceSource.mute = !bounceSource.mute;
     }
 
-    public bool GetInMenu()
-    {
-        return inMenu;
-    }
+    public bool GetInMenu() { return inMenu; }
 
-    public int GetBounces()
-    {
-        return bounces;
-    }
+    public int GetBounces() { return bounces; }
 
+    public void ToggleInMenu() { inMenu = !inMenu; }
 }

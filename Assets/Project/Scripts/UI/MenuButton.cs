@@ -64,10 +64,14 @@ public class MenuButton : MonoBehaviour
             SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
     }
 
-    public void ToggleMute()
+    public void ToggleSFXMute()
+    {
+        player.ToggleMute();
+    }
+
+    public void ToggleMusicMute()
     {
         AudioManager audioManager = FindAnyObjectByType<AudioManager>();
         audioManager.ToggleMute();
-        player.ToggleMute();
     }
 }
