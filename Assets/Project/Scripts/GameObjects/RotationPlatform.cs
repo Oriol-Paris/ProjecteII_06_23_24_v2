@@ -15,6 +15,9 @@ public class RotationPlatform : MonoBehaviour
     private float rotationAmount;
     private float normalizedTime;
 
+    [SerializeField]
+    public bool reverse;
+
     void Start()
     {
         time = 0f;
@@ -30,6 +33,9 @@ public class RotationPlatform : MonoBehaviour
         curveFactor = rotationCurve.Evaluate(normalizedTime);
 
         rotationAmount = velocity * curveFactor * Time.deltaTime;
+
+        if (reverse)
+            rotationAmount *= -1;
 
         transform.Rotate(Vector3.forward, rotationAmount);
 
