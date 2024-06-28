@@ -61,7 +61,8 @@ public class DataSaver : MonoBehaviour
         Load();
 
         if(trophies.list.Count == 0) 
-        { 
+        {
+            trophies.list = new List<int>();
             trophies.list.Add(0);
         }
     }
