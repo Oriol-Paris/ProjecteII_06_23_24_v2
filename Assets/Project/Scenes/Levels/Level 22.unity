@@ -897,6 +897,10 @@ PrefabInstance:
       value: Button (1)
       objectReference: {fileID: 0}
     - target: {fileID: 6377682639426282716, guid: f84a0c365427ba140ac7474b60105e1f, type: 3}
+      propertyPath: door
+      value: 
+      objectReference: {fileID: 969406602}
+    - target: {fileID: 6377682639426282716, guid: f84a0c365427ba140ac7474b60105e1f, type: 3}
       propertyPath: unlockable
       value: 
       objectReference: {fileID: 969406602}
@@ -1042,6 +1046,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Button
       objectReference: {fileID: 0}
+    - target: {fileID: 6377682639426282716, guid: f84a0c365427ba140ac7474b60105e1f, type: 3}
+      propertyPath: door
+      value: 
+      objectReference: {fileID: 270194865}
     - target: {fileID: 6377682639426282716, guid: f84a0c365427ba140ac7474b60105e1f, type: 3}
       propertyPath: unlockable
       value: 

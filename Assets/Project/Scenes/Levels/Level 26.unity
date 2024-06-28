@@ -3285,6 +3285,10 @@ PrefabInstance:
       value: Button
       objectReference: {fileID: 0}
     - target: {fileID: 6377682639426282716, guid: f84a0c365427ba140ac7474b60105e1f, type: 3}
+      propertyPath: door
+      value: 
+      objectReference: {fileID: 1342082457}
+    - target: {fileID: 6377682639426282716, guid: f84a0c365427ba140ac7474b60105e1f, type: 3}
       propertyPath: mobile
       value: 1
       objectReference: {fileID: 0}
