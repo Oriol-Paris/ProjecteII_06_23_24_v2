@@ -53,6 +53,17 @@ public class Player : MonoBehaviour
 
     private void Start()
     {
+        hitSource.volume = 0.4f;
+        bounceSource.volume = 0.4f;
+
+        if (PlayerPrefs.GetInt("MutedSFX") == 0)
+        {
+            hitSource.mute = true;
+            bounceSource.mute = true;
+
+            PlayerPrefs.SetInt("MutedSFX", 1);
+        }
+
         lineRenderer.material = lineMaterial;
         lineRenderer.startWidth = 0.1f;
         lineRenderer.endWidth = 0.1f;

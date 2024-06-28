@@ -64,6 +64,7 @@ public class MenuButton : MonoBehaviour
 
     public void ToMainMenu()
     {
+        FindAnyObjectByType<DataSaver>().Save();
         SceneManager.LoadScene("Main Menu");
     }
 
