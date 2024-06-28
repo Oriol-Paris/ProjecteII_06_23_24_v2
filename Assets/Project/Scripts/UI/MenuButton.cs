@@ -14,6 +14,12 @@ public class MenuButton : MonoBehaviour
     [SerializeField]
     GameObject winScreen;
 
+    [SerializeField]
+    GameObject levelText;
+
+    [SerializeField]
+    GameObject pauseButton;
+
     void Start()
     {
         player = FindAnyObjectByType<Player>();
@@ -40,9 +46,19 @@ public class MenuButton : MonoBehaviour
     public void ToggleInMenu()
     {
         if(!player.GetInMenu())
+        {
             pauseMenu.SetActive(true);
-        else 
+            levelText.SetActive(false);
+            pauseButton.SetActive(false);
+        }
+            
+        else
+        {
             pauseMenu.SetActive(false);
+            levelText.SetActive(true);
+            pauseButton.SetActive(true);
+        }
+            
         player.ToggleInMenu();
     }
 

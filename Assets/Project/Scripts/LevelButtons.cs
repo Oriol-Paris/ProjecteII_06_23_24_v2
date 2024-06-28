@@ -79,6 +79,7 @@ public class LevelButtons : MonoBehaviour
                     {
                         button.interactable = true;
                         buttonText.color = Color.black;
+                        button.GetComponent<ButtonStarSetter>().SetStars(0);
                     }
 
                     buttonText.font = font;
