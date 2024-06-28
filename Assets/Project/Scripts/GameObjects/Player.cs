@@ -53,6 +53,17 @@ public class Player : MonoBehaviour
 
     private void Start()
     {
+        hitSource.volume = 0.4f;
+        bounceSource.volume = 0.4f;
+
+        if (PlayerPrefs.GetInt("MutedSFX") == 0)
+        {
+            hitSource.mute = true;
+            bounceSource.mute = true;
+
+            PlayerPrefs.SetInt("MutedSFX", 1);
+        }
+
         lineRenderer.material = lineMaterial;
         lineRenderer.startWidth = 0.1f;
         lineRenderer.endWidth = 0.1f;
@@ -99,9 +110,7 @@ public class Player : MonoBehaviour
     void CalculateThrowVector()
     {
         Vector2 mousePos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
-        //doing vector2 math to ignore the z values in our distance.
         Vector2 distance = mousePos - mouseOriginalPos;
-        //dont normalize the ditance if you want the throw strength to vary
         throwVector = -distance;
         DrawThrowPath();
     }
@@ -123,16 +132,12 @@ public class Player : MonoBehaviour
 
     public void ReturnOriginalPos()
     {
-        GameButton gameButton = GameObject.FindObjectOfType<GameButton>();
-        if (gameButton != null)
-        {
-            gameButton.unlockable.SetActive(true);
-        }
         ShootDone = false;
         ShootStarted = false;
         this.transform.position = originalPos;
         _rb.velocity = Vector3.zero;
         _rb.angularVelocity = 0;
+        _rb.drag = 0.3f;
         this.transform.rotation = Quaternion.identity;
         bounces = 0;
         _rb.Sleep();
@@ -140,9 +145,8 @@ public class Player : MonoBehaviour
         trailRenderer.Clear();
 
         if(button != null)
-        {
-            button.ToggleHit();
-        }
+            button.ResetHit();
+
         inMobilePlatform = false;
     }
 
@@ -162,7 +166,12 @@ public class Player : MonoBehaviour
         {
             StartCoroutine(SpikeHit());
         }
-        else if(collision.gameObject.CompareTag("Teleport"))
+        
+    }
+
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if (collision.gameObject.CompareTag("Teleport"))
         {
             Teleport(collision.gameObject.GetComponent<Teleporter>());
         }
@@ -170,6 +179,8 @@ public class Player : MonoBehaviour
 
     private IEnumerator SpikeHit()
     {
+        _rb.drag = 25;
+
         hitSource.Play();
         Vector3 deathPosition = transform.position;
 
@@ -212,25 +223,15 @@ public class Player : MonoBehaviour
         inMobilePlatform = false;
     }
 
-    public void ToggleInMenu()
-    {
-        inMenu = !inMenu;
-    }
-
     public void ToggleMute()
     {
         hitSource.mute = !hitSource.mute;
         bounceSource.mute = !bounceSource.mute;
     }
 
-    public bool GetInMenu()
-    {
-        return inMenu;
-    }
+    public bool GetInMenu() { return inMenu; }
 
-    public int GetBounces()
-    {
-        return bounces;
-    }
+    public int GetBounces() { return bounces; }
 
+    public void ToggleInMenu() { inMenu = !inMenu; }
 }

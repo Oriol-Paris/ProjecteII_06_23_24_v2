@@ -7,21 +7,17 @@ public class GameButton : MonoBehaviour
     [SerializeField]
     public bool sticky = false;
     private bool hit = false;
-    [SerializeField]
-    public GameObject unlockable;
 
-    private GameObject player;
-    private Rigidbody2D playerRb;
-    private Player playerScript;
+    [SerializeField]
+    public GameObject door;
+    private Player player;
 
     //para botones mobiles
     public bool mobile;
 
     private void Start()
     {
-        player = GameObject.FindGameObjectWithTag("Player");
-        playerRb = player.GetComponent<Rigidbody2D>();
-        playerScript = player.GetComponent<Player>();
+        player = FindAnyObjectByType<Player>();
         GetComponent<SpriteRenderer>().material.color = Color.red;
     }
 
@@ -29,26 +25,23 @@ public class GameButton : MonoBehaviour
     {
         if(collision.gameObject.CompareTag("Player"))
         {
-            
             if(sticky)
             {
-                playerRb.velocity = Vector3.zero;
-                playerRb.freezeRotation = true;
-                playerRb.freezeRotation = false;
-                unlockable.SetActive(false);
-                playerScript.ToggleShoot();
+                player.GetComponent<Rigidbody2D>().velocity = Vector3.zero;
+                player.GetComponent<Rigidbody2D>().freezeRotation = true;
+                player.ToggleShoot();
 
                 if(mobile)
                 {
-                    playerScript.inMobilePlatform = true;
-                    playerScript.platform = this.GetComponentInParent<PlatformMovement>();
+                    player.inMobilePlatform = true;
+                    player.platform = this.GetComponentInParent<PlatformMovement>();
                 }
                 
             }
 
-            if(!hit)
+            if (!hit)
             {
-                unlockable.SetActive(false);
+                door.SetActive(false);
                 GetComponent<SpriteRenderer>().material.color = Color.green;
                 hit = true;
             }
@@ -56,16 +49,10 @@ public class GameButton : MonoBehaviour
         }
     }
 
-    public void ToggleHit()
+    public void ResetHit()
     {
-        hit = !hit;
-
-        if(hit)
-        {
-            GetComponent<SpriteRenderer>().material.color = Color.green;
-        }
-        else
-            GetComponent<SpriteRenderer>().material.color = Color.red;
+        hit = false;
+        GetComponent<SpriteRenderer>().material.color = Color.red;
+        door.SetActive(true);
     }
-
 }

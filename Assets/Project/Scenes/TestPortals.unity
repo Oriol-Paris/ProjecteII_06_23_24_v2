@@ -371,6 +371,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Teleport (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 4825277696762997421, guid: 4e7e2d00074aa9142962c70e98555640, type: 3}
+      propertyPath: m_IsTrigger
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 7936545230809219479, guid: 4e7e2d00074aa9142962c70e98555640, type: 3}
       propertyPath: destination
       value: 
@@ -753,6 +757,10 @@ PrefabInstance:
     - target: {fileID: 2008178826190095250, guid: 4e7e2d00074aa9142962c70e98555640, type: 3}
       propertyPath: m_Name
       value: Teleport
+      objectReference: {fileID: 0}
+    - target: {fileID: 4825277696762997421, guid: 4e7e2d00074aa9142962c70e98555640, type: 3}
+      propertyPath: m_IsTrigger
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7936545230809219479, guid: 4e7e2d00074aa9142962c70e98555640, type: 3}
       propertyPath: destination

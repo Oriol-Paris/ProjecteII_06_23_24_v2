@@ -9,15 +9,17 @@ public class Goal : MonoBehaviour
     [SerializeField]
     List<Sprite> textures;
 
-    private Fade fade;
+    [SerializeField, ColorUsage(true, true)]
+    public List<Color> colors;
 
     void Start()
     {
-        fade = FindAnyObjectByType<Fade>();
 
         GetComponent<SpriteRenderer>().sprite = textures[Random.Range(0, textures.Count - 1)];
 
-        StartCoroutine(fade.TransitionFadeOut());
+        GetComponent<SpriteRenderer>().material.color = colors[Random.Range(0, colors.Count - 1)];
+
+        StartCoroutine(FindAnyObjectByType<Fade>().TransitionFadeOut());
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
@@ -27,7 +29,7 @@ public class Goal : MonoBehaviour
             FindAnyObjectByType<Player>().GetComponent<Rigidbody2D>().drag = 25;
 
             CheckIfNewMaxLevel();
-            StartCoroutine(fade.TransitionFadeIn());
+            StartCoroutine(FindAnyObjectByType<Fade>().TransitionFadeIn());
             FindAnyObjectByType<MenuButton>().EnterWinScreen();
         }
     }

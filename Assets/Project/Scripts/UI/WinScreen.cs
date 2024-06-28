@@ -13,6 +13,8 @@ public class WinScreen : MonoBehaviour
     [SerializeField]
     int threeStarBounces;
 
+    public int stars;
+
     [SerializeField]
     TextMeshProUGUI levelText;
     [SerializeField]
@@ -35,13 +37,27 @@ public class WinScreen : MonoBehaviour
     public void SetUpWinScreen()
     {
         if (playerBounces <= threeStarBounces)
+        {
             trophy.texture = trophies[2];
+            stars = 3;
+        }
+            
         else if (playerBounces <= twoStarBounces)
+        {
             trophy.texture = trophies[1];
+            stars = 2;
+        }
         else
+        {
             trophy.texture = trophies[0];
+            stars = 1;
+        }
 
         levelText.SetText(SceneManager.GetActiveScene().name);
         bounces.SetText("You used " + playerBounces + " bounces");
+
+        FindAnyObjectByType<DataSaver>().SaveLevel(stars);
     }
+
+
 }
