@@ -1,8 +1,40 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.IO;
+using System.Linq;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+
+public static class JsonHelper
+{
+    public static T[] FromJson<T>(string json)
+    {
+        Wrapper<T> wrapper = JsonUtility.FromJson<Wrapper<T>>(json);
+        return wrapper.Items;
+    }
+
+    public static string ToJson<T>(T[] array)
+    {
+        Wrapper<T> wrapper = new Wrapper<T>();
+        wrapper.Items = array;
+        return JsonUtility.ToJson(wrapper);
+    }
+
+    public static string ToJson<T>(T[] array, bool prettyPrint)
+    {
+        Wrapper<T> wrapper = new Wrapper<T>();
+        wrapper.Items = array;
+        return JsonUtility.ToJson(wrapper, prettyPrint);
+    }
+
+    [Serializable]
+    private class Wrapper<T>
+    {
+        public T[] Items;
+    }
+}
+
 
 [Serializable]
 public class TrophyList
@@ -13,8 +45,11 @@ public class TrophyList
 [Serializable]
 public class DataSaver : MonoBehaviour
 {
-    private int levelOffset = 2;
-    private TrophyList trophies;
+    [SerializeField]
+    private string fileName;
+
+    public int levelOffset = 2;
+    public TrophyList trophies;
 
     public void Awake()
     {
@@ -23,14 +58,21 @@ public class DataSaver : MonoBehaviour
 
     public void FirstLoad()
     {
-        trophies.list.Add(1);
-        GetComponent<FileManager>().Save(trophies.list);
-        this.trophies.list = GetComponent<FileManager>().Load();
+        Load();
+
+        if(trophies.list.Count == 0) 
+        { 
+            trophies.list.Add(0);
+        }
     }
 
     public void SaveLevel(int stars)
     {
-        if(trophies.list[SceneManager.GetActiveScene().buildIndex - levelOffset] < stars)
+        if(SceneManager.GetActiveScene().buildIndex - levelOffset > trophies.list.Count - 1)
+        {
+            trophies.list.Add(stars);
+        }
+        else if (trophies.list[SceneManager.GetActiveScene().buildIndex - levelOffset] < stars)
         {
             trophies.list[SceneManager.GetActiveScene().buildIndex - levelOffset] = stars;
         }
@@ -40,6 +82,60 @@ public class DataSaver : MonoBehaviour
 
     private void OnApplicationQuit()
     {
-        GetComponent<FileManager>().Save(trophies.list);
+        Save();
+    }
+
+    public void Save()
+    {
+        string fullPath = Path.Combine(Application.persistentDataPath, fileName);
+
+        try
+        {
+            Directory.CreateDirectory(Path.GetDirectoryName(fullPath));
+
+            string dataToStore = JsonHelper.ToJson(trophies.list.ToArray());
+
+            using (FileStream stream = new FileStream(fullPath, FileMode.Create))
+            {
+                using (StreamWriter writer = new StreamWriter(stream))
+                {
+                    writer.Write(dataToStore);
+                }
+            }
+        }
+        catch (Exception e)
+        {
+            Debug.LogError("Error occured when trying to save data to file: " + fullPath + "\n" + e);
+        }
+    }
+
+    public void Load()
+    {
+        string fullPath = Path.Combine(Application.persistentDataPath, fileName);
+        int[] readTrophies = new int[SceneManager.sceneCountInBuildSettings];
+
+        if (File.Exists(fullPath))
+        {
+            try
+            {
+                string dataToLoad = "";
+
+                using (FileStream stream = new FileStream(fullPath, FileMode.Open))
+                {
+                    using (StreamReader reader = new StreamReader(stream))
+                    {
+                        dataToLoad = reader.ReadToEnd();
+                    }
+                }
+
+                readTrophies = JsonHelper.FromJson<int>(dataToLoad);
+            }
+            catch (Exception e)
+            {
+                Debug.LogError("Error occured when trying to load data from file: " + fullPath + "\n" + e);
+            }
+        }
+
+        this.trophies.list = readTrophies.ToList<int>();
     }
 }

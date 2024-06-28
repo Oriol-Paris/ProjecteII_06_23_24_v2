@@ -75,6 +75,12 @@ public class LevelButtons : MonoBehaviour
                     button.interactable = false;
                     buttonText.color = Color.white;
 
+                    if (i == trophies.list.Count + 1 && trophies.list[0] != 0)
+                    {
+                        button.interactable = true;
+                        buttonText.color = Color.black;
+                    }
+
                     buttonText.font = font;
                     buttonText.fontSize = fontSize;
 
