@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 5031989892608690951}
   m_Layer: 0
-  m_Name: GameObjects
+  m_Name: ---GAME OBJECTS---
   m_TagString: GameObjects
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -74,7 +74,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 3652795919495638968, guid: e714dd57d9714d1418587cb0ba37672d, type: 3}
       propertyPath: m_Name
-      value: GameManager
+      value: ---GAME MANAGER---
       objectReference: {fileID: 0}
     - target: {fileID: 5656877544863279811, guid: e714dd57d9714d1418587cb0ba37672d, type: 3}
       propertyPath: m_RootOrder

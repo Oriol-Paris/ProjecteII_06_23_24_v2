@@ -53,7 +53,7 @@ public class BackgroundSelector : MonoBehaviour
             bg.texture = backgrounds[3];
             wallColor = new Color(40, 191, 0);
         }
-        else if (sceneIndex <= 36 + indexDiff)
+        else if (sceneIndex <= 37 + indexDiff)
         {
             bg.texture = backgrounds[4];
             wallColor = new Color(0, 62, 191);

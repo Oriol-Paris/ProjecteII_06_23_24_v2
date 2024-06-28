@@ -14,6 +14,12 @@ public class MenuButton : MonoBehaviour
     [SerializeField]
     GameObject winScreen;
 
+    [SerializeField]
+    GameObject levelText;
+
+    [SerializeField]
+    GameObject pauseButton;
+
     void Start()
     {
         player = FindAnyObjectByType<Player>();
@@ -40,14 +46,25 @@ public class MenuButton : MonoBehaviour
     public void ToggleInMenu()
     {
         if(!player.GetInMenu())
+        {
             pauseMenu.SetActive(true);
-        else 
+            levelText.SetActive(false);
+            pauseButton.SetActive(false);
+        }
+            
+        else
+        {
             pauseMenu.SetActive(false);
+            levelText.SetActive(true);
+            pauseButton.SetActive(true);
+        }
+            
         player.ToggleInMenu();
     }
 
     public void ToMainMenu()
     {
+        FindAnyObjectByType<DataSaver>().Save();
         SceneManager.LoadScene("Main Menu");
     }
 
@@ -64,10 +81,14 @@ public class MenuButton : MonoBehaviour
             SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
     }
 
-    public void ToggleMute()
+    public void ToggleSFXMute()
+    {
+        player.ToggleMute();
+    }
+
+    public void ToggleMusicMute()
     {
         AudioManager audioManager = FindAnyObjectByType<AudioManager>();
         audioManager.ToggleMute();
-        player.ToggleMute();
     }
 }

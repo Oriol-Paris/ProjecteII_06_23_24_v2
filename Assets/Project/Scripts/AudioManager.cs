@@ -21,7 +21,7 @@ public class AudioManager : MonoBehaviour
             this.transform.parent = null;
             DontDestroyOnLoad(gameObject);
 
-            SetGlobalVolume(1f);
+            SetGlobalVolume(0.1f);
         }
         else
             Destroy(gameObject);
@@ -29,6 +29,12 @@ public class AudioManager : MonoBehaviour
 
     void Start()
     {
+        if(PlayerPrefs.GetInt("MutedMusic") == 0)
+        {
+            foreach (AudioSource audioTrack in audioTracks)
+                audioTrack.mute = true;
+        }
+
         foreach(var track in audioTracks)
         {
             track.Stop();

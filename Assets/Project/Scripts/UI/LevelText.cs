@@ -9,7 +9,7 @@ public class LevelText : MonoBehaviour
     [SerializeField]
     TextMeshProUGUI text;
 
-    void Start()
+    void Awake()
     {
         text.SetText(SceneManager.GetActiveScene().name);
     }
