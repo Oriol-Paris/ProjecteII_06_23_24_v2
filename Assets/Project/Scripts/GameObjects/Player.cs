@@ -24,6 +24,7 @@ public class Player : MonoBehaviour
     Vector2 mouseOriginalPos;
 
     GameButton button;
+    TeleportProximity teleportObject;
 
     int bounces;
     [SerializeField]
@@ -49,6 +50,7 @@ public class Player : MonoBehaviour
         ShootDone = false;
         button = FindAnyObjectByType<GameButton>();
         bounces = 0;
+        teleportObject = FindObjectOfType<TeleportProximity>();
     }
 
     private void Start()
@@ -146,6 +148,8 @@ public class Player : MonoBehaviour
 
         if(button != null)
             button.ResetHit();
+        if (teleportObject != null)
+            teleportObject.StartFromBeggining();
 
         inMobilePlatform = false;
     }
